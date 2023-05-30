@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.percent = new System.Windows.Forms.Button();
             this.CE = new System.Windows.Forms.Button();
@@ -54,16 +53,9 @@
             this.button23 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
             this.btn_divide = new System.Windows.Forms.Button();
+            this.displayBox = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 24);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(324, 96);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
             // 
             // flowLayoutPanel1
             // 
@@ -312,13 +304,27 @@
             this.btn_divide.Text = "÷";
             this.btn_divide.UseVisualStyleBackColor = true;
             // 
+            // displayBox
+            // 
+            this.displayBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.displayBox.Location = new System.Drawing.Point(12, 26);
+            this.displayBox.MaxLength = 64;
+            this.displayBox.Multiline = false;
+            this.displayBox.Name = "displayBox";
+            this.displayBox.ReadOnly = true;
+            this.displayBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.displayBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.displayBox.Size = new System.Drawing.Size(324, 94);
+            this.displayBox.TabIndex = 0;
+            this.displayBox.Text = "jak wyśrodkować w pionie";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(348, 472);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.displayBox);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -328,8 +334,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button percent;
         private System.Windows.Forms.Button CE;
@@ -355,6 +359,7 @@
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button btn_divide;
+        private System.Windows.Forms.RichTextBox displayBox;
     }
 }
 
