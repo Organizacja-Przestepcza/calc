@@ -28,16 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.MC = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.btn_clear = new System.Windows.Forms.Button();
-            this.btn_percent = new System.Windows.Forms.Button();
-            this.btn_CE = new System.Windows.Forms.Button();
-            this.btn_divide = new System.Windows.Forms.Button();
+            this.percent = new System.Windows.Forms.Button();
+            this.CE = new System.Windows.Forms.Button();
+            this.C = new System.Windows.Forms.Button();
             this.btn_7 = new System.Windows.Forms.Button();
             this.btn_8 = new System.Windows.Forms.Button();
             this.btn_9 = new System.Windows.Forms.Button();
@@ -46,24 +40,22 @@
             this.btn_5 = new System.Windows.Forms.Button();
             this.btn_6 = new System.Windows.Forms.Button();
             this.btn_substract = new System.Windows.Forms.Button();
+            this.btn_3 = new System.Windows.Forms.Button();
             this.btn_1 = new System.Windows.Forms.Button();
             this.btn_2 = new System.Windows.Forms.Button();
-            this.btn_3 = new System.Windows.Forms.Button();
             this.btn_addition = new System.Windows.Forms.Button();
             this.btn_plus_minus = new System.Windows.Forms.Button();
             this.btn_0 = new System.Windows.Forms.Button();
             this.btn_dot = new System.Windows.Forms.Button();
             this.btn_equals = new System.Windows.Forms.Button();
+            this.MC = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
+            this.btn_divide = new System.Windows.Forms.Button();
+            this.displayBox = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 24);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(324, 96);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
             // 
             // flowLayoutPanel1
             // 
@@ -71,9 +63,9 @@
             this.flowLayoutPanel1.Controls.Add(this.button22);
             this.flowLayoutPanel1.Controls.Add(this.button23);
             this.flowLayoutPanel1.Controls.Add(this.button24);
-            this.flowLayoutPanel1.Controls.Add(this.btn_clear);
-            this.flowLayoutPanel1.Controls.Add(this.btn_percent);
-            this.flowLayoutPanel1.Controls.Add(this.btn_CE);
+            this.flowLayoutPanel1.Controls.Add(this.C);
+            this.flowLayoutPanel1.Controls.Add(this.percent);
+            this.flowLayoutPanel1.Controls.Add(this.CE);
             this.flowLayoutPanel1.Controls.Add(this.btn_divide);
             this.flowLayoutPanel1.Controls.Add(this.btn_7);
             this.flowLayoutPanel1.Controls.Add(this.btn_8);
@@ -96,77 +88,32 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(324, 338);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // MC
+            // percent
             // 
-            this.MC.Location = new System.Drawing.Point(3, 3);
-            this.MC.Name = "MC";
-            this.MC.Size = new System.Drawing.Size(75, 50);
-            this.MC.TabIndex = 20;
-            this.MC.Text = "MC";
-            this.MC.UseVisualStyleBackColor = true;
+            this.percent.Location = new System.Drawing.Point(84, 59);
+            this.percent.Name = "percent";
+            this.percent.Size = new System.Drawing.Size(75, 50);
+            this.percent.TabIndex = 0;
+            this.percent.Text = "%";
+            this.percent.UseVisualStyleBackColor = true;
             // 
-            // button22
+            // CE
             // 
-            this.button22.Location = new System.Drawing.Point(84, 3);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(75, 50);
-            this.button22.TabIndex = 21;
-            this.button22.Text = "button22";
-            this.button22.UseVisualStyleBackColor = true;
+            this.CE.Location = new System.Drawing.Point(165, 59);
+            this.CE.Name = "CE";
+            this.CE.Size = new System.Drawing.Size(75, 50);
+            this.CE.TabIndex = 1;
+            this.CE.Text = "CE";
+            this.CE.UseVisualStyleBackColor = true;
             // 
-            // button23
+            // C
             // 
-            this.button23.Location = new System.Drawing.Point(165, 3);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(75, 50);
-            this.button23.TabIndex = 22;
-            this.button23.Text = "button23";
-            this.button23.UseVisualStyleBackColor = true;
-            // 
-            // button24
-            // 
-            this.button24.Location = new System.Drawing.Point(246, 3);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(75, 50);
-            this.button24.TabIndex = 23;
-            this.button24.Text = "button24";
-            this.button24.UseVisualStyleBackColor = true;
-            // 
-            // btn_clear
-            // 
-            this.btn_clear.Location = new System.Drawing.Point(3, 59);
-            this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(75, 50);
-            this.btn_clear.TabIndex = 2;
-            this.btn_clear.Text = "C";
-            this.btn_clear.UseVisualStyleBackColor = true;
-            // 
-            // btn_percent
-            // 
-            this.btn_percent.Location = new System.Drawing.Point(84, 59);
-            this.btn_percent.Name = "btn_percent";
-            this.btn_percent.Size = new System.Drawing.Size(75, 50);
-            this.btn_percent.TabIndex = 0;
-            this.btn_percent.Text = "%";
-            this.btn_percent.UseVisualStyleBackColor = true;
-            // 
-            // btn_CE
-            // 
-            this.btn_CE.Location = new System.Drawing.Point(165, 59);
-            this.btn_CE.Name = "btn_CE";
-            this.btn_CE.Size = new System.Drawing.Size(75, 50);
-            this.btn_CE.TabIndex = 1;
-            this.btn_CE.Text = "CE";
-            this.btn_CE.UseVisualStyleBackColor = true;
-            // 
-            // btn_divide
-            // 
-            this.btn_divide.Location = new System.Drawing.Point(246, 59);
-            this.btn_divide.Name = "btn_divide";
-            this.btn_divide.Size = new System.Drawing.Size(75, 50);
-            this.btn_divide.TabIndex = 3;
-            this.btn_divide.Text = "÷";
-            this.btn_divide.UseVisualStyleBackColor = true;
+            this.C.Location = new System.Drawing.Point(3, 59);
+            this.C.Name = "C";
+            this.C.Size = new System.Drawing.Size(75, 50);
+            this.C.TabIndex = 2;
+            this.C.Text = "C";
+            this.C.UseVisualStyleBackColor = true;
             // 
             // btn_7
             // 
@@ -240,6 +187,15 @@
             this.btn_substract.Text = "\t-";
             this.btn_substract.UseVisualStyleBackColor = true;
             // 
+            // btn_3
+            // 
+            this.btn_3.Location = new System.Drawing.Point(165, 227);
+            this.btn_3.Name = "btn_3";
+            this.btn_3.Size = new System.Drawing.Size(75, 50);
+            this.btn_3.TabIndex = 12;
+            this.btn_3.Text = "3";
+            this.btn_3.UseVisualStyleBackColor = true;
+            // 
             // btn_1
             // 
             this.btn_1.Location = new System.Drawing.Point(3, 227);
@@ -257,15 +213,6 @@
             this.btn_2.TabIndex = 14;
             this.btn_2.Text = "2";
             this.btn_2.UseVisualStyleBackColor = true;
-            // 
-            // btn_3
-            // 
-            this.btn_3.Location = new System.Drawing.Point(165, 227);
-            this.btn_3.Name = "btn_3";
-            this.btn_3.Size = new System.Drawing.Size(75, 50);
-            this.btn_3.TabIndex = 12;
-            this.btn_3.Text = "3";
-            this.btn_3.UseVisualStyleBackColor = true;
             // 
             // btn_addition
             // 
@@ -312,13 +259,72 @@
             this.btn_equals.Text = "=";
             this.btn_equals.UseVisualStyleBackColor = true;
             // 
+            // MC
+            // 
+            this.MC.Location = new System.Drawing.Point(3, 3);
+            this.MC.Name = "MC";
+            this.MC.Size = new System.Drawing.Size(75, 50);
+            this.MC.TabIndex = 20;
+            this.MC.Text = "MC";
+            this.MC.UseVisualStyleBackColor = true;
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(84, 3);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(75, 50);
+            this.button22.TabIndex = 21;
+            this.button22.Text = "button22";
+            this.button22.UseVisualStyleBackColor = true;
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(165, 3);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(75, 50);
+            this.button23.TabIndex = 22;
+            this.button23.Text = "button23";
+            this.button23.UseVisualStyleBackColor = true;
+            // 
+            // button24
+            // 
+            this.button24.Location = new System.Drawing.Point(246, 3);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(75, 50);
+            this.button24.TabIndex = 23;
+            this.button24.Text = "button24";
+            this.button24.UseVisualStyleBackColor = true;
+            // 
+            // btn_divide
+            // 
+            this.btn_divide.Location = new System.Drawing.Point(246, 59);
+            this.btn_divide.Name = "btn_divide";
+            this.btn_divide.Size = new System.Drawing.Size(75, 50);
+            this.btn_divide.TabIndex = 3;
+            this.btn_divide.Text = "÷";
+            this.btn_divide.UseVisualStyleBackColor = true;
+            // 
+            // displayBox
+            // 
+            this.displayBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.displayBox.Location = new System.Drawing.Point(12, 26);
+            this.displayBox.MaxLength = 64;
+            this.displayBox.Multiline = false;
+            this.displayBox.Name = "displayBox";
+            this.displayBox.ReadOnly = true;
+            this.displayBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.displayBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.displayBox.Size = new System.Drawing.Size(324, 94);
+            this.displayBox.TabIndex = 0;
+            this.displayBox.Text = "jak wyśrodkować w pionie";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(348, 472);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.displayBox);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -328,12 +334,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btn_percent;
-        private System.Windows.Forms.Button btn_CE;
-        private System.Windows.Forms.Button btn_clear;
+        private System.Windows.Forms.Button percent;
+        private System.Windows.Forms.Button CE;
+        private System.Windows.Forms.Button C;
         private System.Windows.Forms.Button btn_7;
         private System.Windows.Forms.Button btn_8;
         private System.Windows.Forms.Button btn_9;
@@ -355,6 +359,7 @@
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button btn_divide;
+        private System.Windows.Forms.RichTextBox displayBox;
     }
 }
 
