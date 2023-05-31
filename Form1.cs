@@ -22,6 +22,7 @@ namespace calc
         private void BtnClear_Click(object sender, EventArgs e)
         {
             DisplayBox.Text = string.Empty;
+            HistoryBox.Text = string.Empty;
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
