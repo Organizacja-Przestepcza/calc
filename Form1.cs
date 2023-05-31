@@ -12,6 +12,7 @@ namespace calc
 {
     public partial class Calc : Form
     {
+        //private Array numbers = ;
         public Calc()
         {
             InitializeComponent();
@@ -73,6 +74,7 @@ namespace calc
         private void BtnEquals_Click(object sender, EventArgs e)
         {
             string result = "";
+            Calculate();
             HistoryUpdate("=" + result);
         }
 
@@ -117,16 +119,19 @@ namespace calc
         private void HistoryUpdate(string op="")
         {
             // jeśli równanie gotowe to usuwa historie i daje rezultat
-            if (HistoryBox.Text.Contains("="))
+            if (HistoryBox.Text != string.Empty)
             {
-                HistoryBox.Text = ClearHistoryWithResult();
+                if (!char.IsDigit(HistoryBox.Text.Last()))
+                {
+                    HistoryBox.Text = ClearHistoryWithResult();
+                }
+
+                // zamienia ostatni znak jeśli nie dostał liczby
+                else if (DisplayBox.Text == string.Empty)
+                    HistoryBox.Text = HistoryBox.Text.Remove(HistoryBox.Text.Length - 1, 1);
             }
-
-            // jeśli display pusty a history niepusty to usuwa ostatni znak
-            else if (DisplayBox.Text == string.Empty && HistoryBox.Text != string.Empty)
-                HistoryBox.Text = HistoryBox.Text.Remove(HistoryBox.Text.Length - 1, 1);
-
             HistoryBox.Text += DisplayBox.Text;
+            
             
             // jak history pusty to nic nie pisze
             if(HistoryBox.Text != string.Empty)
@@ -150,6 +155,14 @@ namespace calc
                 HistoryBox.Text = string.Empty;
             else
                 DisplayBox.Text = string.Empty;
+        }
+
+        private void Calculate()
+        {
+            if(HistoryBox.Text.Contains("."))
+            {
+                
+            }
         }
 
         #endregion
