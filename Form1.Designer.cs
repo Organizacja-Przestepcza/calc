@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.BtnEquals = new System.Windows.Forms.Button();
-            this.BtnDot = new System.Windows.Forms.Button();
+            this.BtnPercent = new System.Windows.Forms.Button();
             this.Btn0 = new System.Windows.Forms.Button();
             this.BtnPlusMinus = new System.Windows.Forms.Button();
             this.BtnAdd = new System.Windows.Forms.Button();
@@ -53,9 +53,9 @@
             this.button22 = new System.Windows.Forms.Button();
             this.BtnMemClear = new System.Windows.Forms.Button();
             this.container = new System.Windows.Forms.Panel();
+            this.HistoryBox = new System.Windows.Forms.TextBox();
             this.tbl_buttons = new System.Windows.Forms.TableLayoutPanel();
             this.DisplayBox = new System.Windows.Forms.TextBox();
-            this.HistoryBox = new System.Windows.Forms.TextBox();
             this.container.SuspendLayout();
             this.tbl_buttons.SuspendLayout();
             this.SuspendLayout();
@@ -71,16 +71,16 @@
             this.BtnEquals.UseVisualStyleBackColor = true;
             this.BtnEquals.Click += new System.EventHandler(this.BtnEquals_Click);
             // 
-            // BtnDot
+            // BtnPercent
             // 
-            this.BtnDot.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnDot.Location = new System.Drawing.Point(201, 368);
-            this.BtnDot.Name = "BtnDot";
-            this.BtnDot.Size = new System.Drawing.Size(93, 67);
-            this.BtnDot.TabIndex = 18;
-            this.BtnDot.Text = ".";
-            this.BtnDot.UseVisualStyleBackColor = true;
-            this.BtnDot.Click += new System.EventHandler(this.BtnDot_Click);
+            this.BtnPercent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnPercent.Location = new System.Drawing.Point(102, 76);
+            this.BtnPercent.Name = "BtnPercent";
+            this.BtnPercent.Size = new System.Drawing.Size(93, 67);
+            this.BtnPercent.TabIndex = 18;
+            this.BtnPercent.Text = "%";
+            this.BtnPercent.UseVisualStyleBackColor = true;
+            this.BtnPercent.Click += new System.EventHandler(this.BtnPercent_Click);
             // 
             // Btn0
             // 
@@ -261,7 +261,7 @@
             // BtnDelete
             // 
             this.BtnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnDelete.Location = new System.Drawing.Point(102, 76);
+            this.BtnDelete.Location = new System.Drawing.Point(201, 368);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(93, 67);
             this.BtnDelete.TabIndex = 0;
@@ -335,6 +335,22 @@
             this.container.Size = new System.Drawing.Size(398, 521);
             this.container.TabIndex = 2;
             // 
+            // HistoryBox
+            // 
+            this.HistoryBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.HistoryBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HistoryBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.HistoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.HistoryBox.Location = new System.Drawing.Point(0, 0);
+            this.HistoryBox.MaxLength = 64;
+            this.HistoryBox.Multiline = true;
+            this.HistoryBox.Name = "HistoryBox";
+            this.HistoryBox.ReadOnly = true;
+            this.HistoryBox.Size = new System.Drawing.Size(398, 48);
+            this.HistoryBox.TabIndex = 3;
+            this.HistoryBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // tbl_buttons
             // 
             this.tbl_buttons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -346,7 +362,6 @@
             this.tbl_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tbl_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tbl_buttons.Controls.Add(this.BtnEquals, 3, 5);
-            this.tbl_buttons.Controls.Add(this.BtnDot, 2, 5);
             this.tbl_buttons.Controls.Add(this.Btn0, 1, 5);
             this.tbl_buttons.Controls.Add(this.BtnPlusMinus, 0, 5);
             this.tbl_buttons.Controls.Add(this.BtnAdd, 3, 4);
@@ -363,12 +378,13 @@
             this.tbl_buttons.Controls.Add(this.Btn7, 0, 2);
             this.tbl_buttons.Controls.Add(this.BtnDivide, 3, 1);
             this.tbl_buttons.Controls.Add(this.BtnSquare, 2, 1);
-            this.tbl_buttons.Controls.Add(this.BtnDelete, 1, 1);
             this.tbl_buttons.Controls.Add(this.BtnClear, 0, 1);
             this.tbl_buttons.Controls.Add(this.button24, 3, 0);
             this.tbl_buttons.Controls.Add(this.button23, 2, 0);
             this.tbl_buttons.Controls.Add(this.button22, 1, 0);
             this.tbl_buttons.Controls.Add(this.BtnMemClear, 0, 0);
+            this.tbl_buttons.Controls.Add(this.BtnDelete, 2, 5);
+            this.tbl_buttons.Controls.Add(this.BtnPercent, 1, 1);
             this.tbl_buttons.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tbl_buttons.Location = new System.Drawing.Point(0, 83);
             this.tbl_buttons.Name = "tbl_buttons";
@@ -397,22 +413,6 @@
             this.DisplayBox.TabIndex = 0;
             this.DisplayBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // HistoryBox
-            // 
-            this.HistoryBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.HistoryBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.HistoryBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.HistoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.HistoryBox.Location = new System.Drawing.Point(0, 0);
-            this.HistoryBox.MaxLength = 64;
-            this.HistoryBox.Multiline = true;
-            this.HistoryBox.Name = "HistoryBox";
-            this.HistoryBox.ReadOnly = true;
-            this.HistoryBox.Size = new System.Drawing.Size(398, 48);
-            this.HistoryBox.TabIndex = 3;
-            this.HistoryBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // Calc
             // 
             this.AcceptButton = this.BtnEquals;
@@ -434,7 +434,7 @@
         #endregion
 
         private System.Windows.Forms.Button BtnEquals;
-        private System.Windows.Forms.Button BtnDot;
+        private System.Windows.Forms.Button BtnPercent;
         private System.Windows.Forms.Button Btn0;
         private System.Windows.Forms.Button BtnPlusMinus;
         private System.Windows.Forms.Button BtnAdd;

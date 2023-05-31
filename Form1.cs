@@ -19,7 +19,7 @@ namespace calc
             InitializeComponent();
         }
 
-        private bool floatOperation = false;
+        private int number1, number2;
 
         #region Clear Buttons Click
 
@@ -69,6 +69,11 @@ namespace calc
 
         }
 
+        private void BtnPercent_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void BtnPlusMinus_Click(object sender, EventArgs e)
         {
 
@@ -105,13 +110,6 @@ namespace calc
 
         private void Btn9_Click(object sender, EventArgs e) => DisplayBox.Text += "9";
 
-        private void BtnDot_Click(object sender, EventArgs e)
-        {
-            if (!DisplayBox.Text.Contains("."))
-            {
-                DisplayBox.Text += ".";
-            }
-        }
         #endregion
 
         #region Calculations
@@ -122,59 +120,20 @@ namespace calc
         private void HistoryUpdate(string op="")
         {
             var history = HistoryBox.Text;
-            // jeśli równanie gotowe to usuwa historie i daje rezultat
-            if (history != string.Empty)
+            
+            if (history == string.Empty)
             {
-                if (!char.IsDigit(history.Last()))
-                {
-                    history = ClearHistoryWithResult();
-                }
-
-                // zamienia ostatni znak jeśli nie dostał liczby
-                else if (DisplayBox.Text == string.Empty)
-                    history = history.Remove(history.Length - 1, 1);
+                history = DisplayBox.Text;
+                if (!int.TryParse(history, out number1))
+                    return;
             }
-            history += CheckForFloat();
-            
-            
-            // jak history pusty to nic nie pisze
-            if(history != string.Empty)
-                history += op;
+            else if (DisplayBox.Text == string.Empty)
+                history = history.Remove(history.Length - 1, 1);
+
+            history += op;
             HistoryBox.Text = history;
             // usuwa input
             DisplayBox.Text = string.Empty;
-        }
-
-        /// <summary>
-        /// Checks if the input is a float and formats it
-        /// </summary>
-        /// <returns><see cref="string"/> with formatted number</returns>
-        private string CheckForFloat()
-        {
-            var number = DisplayBox.Text;
-            if(number == string.Empty)
-            {
-                return number;
-            }
-            if(number.Contains('.'))
-            {
-                floatOperation = true;
-                string mantise = number.Substring(number.IndexOf('.'));
-                if (mantise.Length <= 0)
-                    number = number.Remove(number.Length - 1, 1);
-                else
-                {
-                    for (int i = 0; i < mantise.Length; i++)
-                    {
-                        var ind = mantise.Length - 1 - i;
-                        if ((mantise[ind] == '0') || (mantise[ind] == '.'))
-                            number = number.Remove(number.Length - 1, 1);
-                        else
-                            break;
-                    }
-                }
-            }
-            return number;
         }
 
         private string ClearHistoryWithResult()
@@ -189,7 +148,6 @@ namespace calc
             if (DisplayBox.Text == string.Empty)
             {
                 HistoryBox.Text = string.Empty;
-                floatOperation = false;
             }
             else
                 DisplayBox.Text = string.Empty;
@@ -197,14 +155,7 @@ namespace calc
 
         private void Calculate()
         {
-            if(floatOperation)
-            {
 
-            }
-            else
-            {
-
-            }
         }
 
         #endregion
