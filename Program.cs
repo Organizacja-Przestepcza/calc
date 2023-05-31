@@ -16,7 +16,7 @@ namespace calc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new calc());
+            Application.Run(new Calc());
         }
     }
 }
