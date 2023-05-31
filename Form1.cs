@@ -18,7 +18,7 @@ namespace calc
             InitializeComponent();
         }
 
-        #region Operations Click
+        #region Clear Buttons Click
         private void BtnClear_Click(object sender, EventArgs e)
         {
             DisplayBox.Text = string.Empty;
@@ -31,6 +31,40 @@ namespace calc
                 DisplayBox.Text = DisplayBox.Text.Remove(DisplayBox.Text.Length-1);
             }
         }
+
+        private void BtnMemClear_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region Operations Click
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnSubtract_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnMultiply_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnDivide_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnSquare_Click(object sender, EventArgs e)
+        {
+
+        }
+
         #endregion
 
         #region Numbers Click

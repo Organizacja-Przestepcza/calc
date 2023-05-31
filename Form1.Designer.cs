@@ -110,6 +110,7 @@
             this.BtnAdd.TabIndex = 15;
             this.BtnAdd.Text = "+";
             this.BtnAdd.UseVisualStyleBackColor = true;
+            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // Btn3
             // 
@@ -153,6 +154,7 @@
             this.BtnSubtract.TabIndex = 11;
             this.BtnSubtract.Text = "\t-";
             this.BtnSubtract.UseVisualStyleBackColor = true;
+            this.BtnSubtract.Click += new System.EventHandler(this.BtnSubtract_Click);
             // 
             // Btn6
             // 
@@ -196,6 +198,7 @@
             this.BtnMultiply.TabIndex = 7;
             this.BtnMultiply.Text = "×";
             this.BtnMultiply.UseVisualStyleBackColor = true;
+            this.BtnMultiply.Click += new System.EventHandler(this.BtnMultiply_Click);
             // 
             // Btn9
             // 
@@ -239,6 +242,7 @@
             this.BtnDivide.TabIndex = 3;
             this.BtnDivide.Text = "÷";
             this.BtnDivide.UseVisualStyleBackColor = true;
+            this.BtnDivide.Click += new System.EventHandler(this.BtnDivide_Click);
             // 
             // BtnSquare
             // 
@@ -249,6 +253,7 @@
             this.BtnSquare.TabIndex = 1;
             this.BtnSquare.Text = "x^2";
             this.BtnSquare.UseVisualStyleBackColor = true;
+            this.BtnSquare.Click += new System.EventHandler(this.BtnSquare_Click);
             // 
             // BtnDelete
             // 
@@ -312,6 +317,7 @@
             this.BtnMemClear.TabIndex = 20;
             this.BtnMemClear.Text = "MC";
             this.BtnMemClear.UseVisualStyleBackColor = true;
+            this.BtnMemClear.Click += new System.EventHandler(this.BtnMemClear_Click);
             // 
             // container
             // 
