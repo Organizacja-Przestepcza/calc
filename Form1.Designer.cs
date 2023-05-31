@@ -28,238 +28,238 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_equals = new System.Windows.Forms.Button();
-            this.btn_dot = new System.Windows.Forms.Button();
-            this.btn_0 = new System.Windows.Forms.Button();
-            this.btn_plus_minus = new System.Windows.Forms.Button();
-            this.btn_add = new System.Windows.Forms.Button();
-            this.btn_3 = new System.Windows.Forms.Button();
-            this.btn_2 = new System.Windows.Forms.Button();
-            this.btn_1 = new System.Windows.Forms.Button();
-            this.btn_subtract = new System.Windows.Forms.Button();
-            this.btn_6 = new System.Windows.Forms.Button();
-            this.btn_5 = new System.Windows.Forms.Button();
-            this.btn_4 = new System.Windows.Forms.Button();
-            this.btn_multiply = new System.Windows.Forms.Button();
-            this.btn_9 = new System.Windows.Forms.Button();
-            this.btn_8 = new System.Windows.Forms.Button();
-            this.btn_7 = new System.Windows.Forms.Button();
-            this.btn_divide = new System.Windows.Forms.Button();
-            this.btn_square = new System.Windows.Forms.Button();
-            this.btn_percent = new System.Windows.Forms.Button();
-            this.btn_clear = new System.Windows.Forms.Button();
+            this.BtnEquals = new System.Windows.Forms.Button();
+            this.BtnDot = new System.Windows.Forms.Button();
+            this.Btn0 = new System.Windows.Forms.Button();
+            this.BtnPlusMinus = new System.Windows.Forms.Button();
+            this.BtnAdd = new System.Windows.Forms.Button();
+            this.Btn3 = new System.Windows.Forms.Button();
+            this.Btn2 = new System.Windows.Forms.Button();
+            this.Btn1 = new System.Windows.Forms.Button();
+            this.BtnSubtract = new System.Windows.Forms.Button();
+            this.Btn6 = new System.Windows.Forms.Button();
+            this.Btn5 = new System.Windows.Forms.Button();
+            this.Btn4 = new System.Windows.Forms.Button();
+            this.BtnMultiply = new System.Windows.Forms.Button();
+            this.Btn9 = new System.Windows.Forms.Button();
+            this.Btn8 = new System.Windows.Forms.Button();
+            this.Btn7 = new System.Windows.Forms.Button();
+            this.BtnDivide = new System.Windows.Forms.Button();
+            this.BtnSquare = new System.Windows.Forms.Button();
+            this.BtnPercent = new System.Windows.Forms.Button();
+            this.BtnClear = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
-            this.btn_mem_clear = new System.Windows.Forms.Button();
+            this.BtnMemClear = new System.Windows.Forms.Button();
             this.container = new System.Windows.Forms.Panel();
-            this.displayBox = new System.Windows.Forms.TextBox();
             this.tbl_buttons = new System.Windows.Forms.TableLayoutPanel();
+            this.DisplayBox = new System.Windows.Forms.TextBox();
             this.container.SuspendLayout();
             this.tbl_buttons.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_equals
             // 
-            this.btn_equals.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_equals.Location = new System.Drawing.Point(300, 364);
-            this.btn_equals.Name = "btn_equals";
-            this.btn_equals.Size = new System.Drawing.Size(95, 71);
-            this.btn_equals.TabIndex = 19;
-            this.btn_equals.Text = "=";
-            this.btn_equals.UseVisualStyleBackColor = true;
+            this.BtnEquals.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnEquals.Location = new System.Drawing.Point(300, 368);
+            this.BtnEquals.Name = "btn_equals";
+            this.BtnEquals.Size = new System.Drawing.Size(95, 67);
+            this.BtnEquals.TabIndex = 19;
+            this.BtnEquals.Text = "=";
+            this.BtnEquals.UseVisualStyleBackColor = true;
             // 
             // btn_dot
             // 
-            this.btn_dot.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_dot.Location = new System.Drawing.Point(201, 364);
-            this.btn_dot.Name = "btn_dot";
-            this.btn_dot.Size = new System.Drawing.Size(93, 71);
-            this.btn_dot.TabIndex = 18;
-            this.btn_dot.Text = ".";
-            this.btn_dot.UseVisualStyleBackColor = true;
+            this.BtnDot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnDot.Location = new System.Drawing.Point(201, 368);
+            this.BtnDot.Name = "btn_dot";
+            this.BtnDot.Size = new System.Drawing.Size(93, 67);
+            this.BtnDot.TabIndex = 18;
+            this.BtnDot.Text = ".";
+            this.BtnDot.UseVisualStyleBackColor = true;
             // 
             // btn_0
             // 
-            this.btn_0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_0.Location = new System.Drawing.Point(102, 364);
-            this.btn_0.Name = "btn_0";
-            this.btn_0.Size = new System.Drawing.Size(93, 71);
-            this.btn_0.TabIndex = 17;
-            this.btn_0.Text = "0";
-            this.btn_0.UseVisualStyleBackColor = true;
+            this.Btn0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn0.Location = new System.Drawing.Point(102, 368);
+            this.Btn0.Name = "btn_0";
+            this.Btn0.Size = new System.Drawing.Size(93, 67);
+            this.Btn0.TabIndex = 17;
+            this.Btn0.Text = "0";
+            this.Btn0.UseVisualStyleBackColor = true;
             // 
             // btn_plus_minus
             // 
-            this.btn_plus_minus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_plus_minus.Location = new System.Drawing.Point(3, 364);
-            this.btn_plus_minus.Name = "btn_plus_minus";
-            this.btn_plus_minus.Size = new System.Drawing.Size(93, 71);
-            this.btn_plus_minus.TabIndex = 16;
-            this.btn_plus_minus.Text = "+/-";
-            this.btn_plus_minus.UseVisualStyleBackColor = true;
+            this.BtnPlusMinus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnPlusMinus.Location = new System.Drawing.Point(3, 368);
+            this.BtnPlusMinus.Name = "btn_plus_minus";
+            this.BtnPlusMinus.Size = new System.Drawing.Size(93, 67);
+            this.BtnPlusMinus.TabIndex = 16;
+            this.BtnPlusMinus.Text = "+/-";
+            this.BtnPlusMinus.UseVisualStyleBackColor = true;
             // 
             // btn_add
             // 
-            this.btn_add.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_add.Location = new System.Drawing.Point(300, 292);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(95, 66);
-            this.btn_add.TabIndex = 15;
-            this.btn_add.Text = "+";
-            this.btn_add.UseVisualStyleBackColor = true;
+            this.BtnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnAdd.Location = new System.Drawing.Point(300, 295);
+            this.BtnAdd.Name = "btn_add";
+            this.BtnAdd.Size = new System.Drawing.Size(95, 67);
+            this.BtnAdd.TabIndex = 15;
+            this.BtnAdd.Text = "+";
+            this.BtnAdd.UseVisualStyleBackColor = true;
             // 
             // btn_3
             // 
-            this.btn_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_3.Location = new System.Drawing.Point(201, 292);
-            this.btn_3.Name = "btn_3";
-            this.btn_3.Size = new System.Drawing.Size(93, 66);
-            this.btn_3.TabIndex = 12;
-            this.btn_3.Text = "3";
-            this.btn_3.UseVisualStyleBackColor = true;
+            this.Btn3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn3.Location = new System.Drawing.Point(201, 295);
+            this.Btn3.Name = "btn_3";
+            this.Btn3.Size = new System.Drawing.Size(93, 67);
+            this.Btn3.TabIndex = 12;
+            this.Btn3.Text = "3";
+            this.Btn3.UseVisualStyleBackColor = true;
             // 
             // btn_2
             // 
-            this.btn_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_2.Location = new System.Drawing.Point(102, 292);
-            this.btn_2.Name = "btn_2";
-            this.btn_2.Size = new System.Drawing.Size(93, 66);
-            this.btn_2.TabIndex = 14;
-            this.btn_2.Text = "2";
-            this.btn_2.UseVisualStyleBackColor = true;
+            this.Btn2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn2.Location = new System.Drawing.Point(102, 295);
+            this.Btn2.Name = "btn_2";
+            this.Btn2.Size = new System.Drawing.Size(93, 67);
+            this.Btn2.TabIndex = 14;
+            this.Btn2.Text = "2";
+            this.Btn2.UseVisualStyleBackColor = true;
             // 
             // btn_1
             // 
-            this.btn_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_1.Location = new System.Drawing.Point(3, 292);
-            this.btn_1.Name = "btn_1";
-            this.btn_1.Size = new System.Drawing.Size(93, 66);
-            this.btn_1.TabIndex = 13;
-            this.btn_1.Text = "1";
-            this.btn_1.UseVisualStyleBackColor = true;
+            this.Btn1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn1.Location = new System.Drawing.Point(3, 295);
+            this.Btn1.Name = "btn_1";
+            this.Btn1.Size = new System.Drawing.Size(93, 67);
+            this.Btn1.TabIndex = 13;
+            this.Btn1.Text = "1";
+            this.Btn1.UseVisualStyleBackColor = true;
             // 
             // btn_subtract
             // 
-            this.btn_subtract.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_subtract.Location = new System.Drawing.Point(300, 220);
-            this.btn_subtract.Name = "btn_subtract";
-            this.btn_subtract.Size = new System.Drawing.Size(95, 66);
-            this.btn_subtract.TabIndex = 11;
-            this.btn_subtract.Text = "\t-";
-            this.btn_subtract.UseVisualStyleBackColor = true;
+            this.BtnSubtract.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnSubtract.Location = new System.Drawing.Point(300, 222);
+            this.BtnSubtract.Name = "btn_subtract";
+            this.BtnSubtract.Size = new System.Drawing.Size(95, 67);
+            this.BtnSubtract.TabIndex = 11;
+            this.BtnSubtract.Text = "\t-";
+            this.BtnSubtract.UseVisualStyleBackColor = true;
             // 
             // btn_6
             // 
-            this.btn_6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_6.Location = new System.Drawing.Point(201, 220);
-            this.btn_6.Name = "btn_6";
-            this.btn_6.Size = new System.Drawing.Size(93, 66);
-            this.btn_6.TabIndex = 10;
-            this.btn_6.Text = "6";
-            this.btn_6.UseVisualStyleBackColor = true;
+            this.Btn6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn6.Location = new System.Drawing.Point(201, 222);
+            this.Btn6.Name = "btn_6";
+            this.Btn6.Size = new System.Drawing.Size(93, 67);
+            this.Btn6.TabIndex = 10;
+            this.Btn6.Text = "6";
+            this.Btn6.UseVisualStyleBackColor = true;
             // 
             // btn_5
             // 
-            this.btn_5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_5.Location = new System.Drawing.Point(102, 220);
-            this.btn_5.Name = "btn_5";
-            this.btn_5.Size = new System.Drawing.Size(93, 66);
-            this.btn_5.TabIndex = 9;
-            this.btn_5.Text = "5";
-            this.btn_5.UseVisualStyleBackColor = true;
+            this.Btn5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn5.Location = new System.Drawing.Point(102, 222);
+            this.Btn5.Name = "btn_5";
+            this.Btn5.Size = new System.Drawing.Size(93, 67);
+            this.Btn5.TabIndex = 9;
+            this.Btn5.Text = "5";
+            this.Btn5.UseVisualStyleBackColor = true;
             // 
             // btn_4
             // 
-            this.btn_4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_4.Location = new System.Drawing.Point(3, 220);
-            this.btn_4.Name = "btn_4";
-            this.btn_4.Size = new System.Drawing.Size(93, 66);
-            this.btn_4.TabIndex = 8;
-            this.btn_4.Text = "4";
-            this.btn_4.UseVisualStyleBackColor = true;
+            this.Btn4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn4.Location = new System.Drawing.Point(3, 222);
+            this.Btn4.Name = "btn_4";
+            this.Btn4.Size = new System.Drawing.Size(93, 67);
+            this.Btn4.TabIndex = 8;
+            this.Btn4.Text = "4";
+            this.Btn4.UseVisualStyleBackColor = true;
             // 
             // btn_multiply
             // 
-            this.btn_multiply.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_multiply.Location = new System.Drawing.Point(300, 148);
-            this.btn_multiply.Name = "btn_multiply";
-            this.btn_multiply.Size = new System.Drawing.Size(95, 66);
-            this.btn_multiply.TabIndex = 7;
-            this.btn_multiply.Text = "×";
-            this.btn_multiply.UseVisualStyleBackColor = true;
+            this.BtnMultiply.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnMultiply.Location = new System.Drawing.Point(300, 149);
+            this.BtnMultiply.Name = "btn_multiply";
+            this.BtnMultiply.Size = new System.Drawing.Size(95, 67);
+            this.BtnMultiply.TabIndex = 7;
+            this.BtnMultiply.Text = "×";
+            this.BtnMultiply.UseVisualStyleBackColor = true;
             // 
             // btn_9
             // 
-            this.btn_9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_9.Location = new System.Drawing.Point(201, 148);
-            this.btn_9.Name = "btn_9";
-            this.btn_9.Size = new System.Drawing.Size(93, 66);
-            this.btn_9.TabIndex = 6;
-            this.btn_9.Text = "9";
-            this.btn_9.UseVisualStyleBackColor = true;
+            this.Btn9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn9.Location = new System.Drawing.Point(201, 149);
+            this.Btn9.Name = "btn_9";
+            this.Btn9.Size = new System.Drawing.Size(93, 67);
+            this.Btn9.TabIndex = 6;
+            this.Btn9.Text = "9";
+            this.Btn9.UseVisualStyleBackColor = true;
             // 
             // btn_8
             // 
-            this.btn_8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_8.Location = new System.Drawing.Point(102, 148);
-            this.btn_8.Name = "btn_8";
-            this.btn_8.Size = new System.Drawing.Size(93, 66);
-            this.btn_8.TabIndex = 5;
-            this.btn_8.Text = "8";
-            this.btn_8.UseVisualStyleBackColor = true;
+            this.Btn8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn8.Location = new System.Drawing.Point(102, 149);
+            this.Btn8.Name = "btn_8";
+            this.Btn8.Size = new System.Drawing.Size(93, 67);
+            this.Btn8.TabIndex = 5;
+            this.Btn8.Text = "8";
+            this.Btn8.UseVisualStyleBackColor = true;
             // 
             // btn_7
             // 
-            this.btn_7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_7.Location = new System.Drawing.Point(3, 148);
-            this.btn_7.Name = "btn_7";
-            this.btn_7.Size = new System.Drawing.Size(93, 66);
-            this.btn_7.TabIndex = 4;
-            this.btn_7.Text = "7";
-            this.btn_7.UseVisualStyleBackColor = true;
+            this.Btn7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn7.Location = new System.Drawing.Point(3, 149);
+            this.Btn7.Name = "btn_7";
+            this.Btn7.Size = new System.Drawing.Size(93, 67);
+            this.Btn7.TabIndex = 4;
+            this.Btn7.Text = "7";
+            this.Btn7.UseVisualStyleBackColor = true;
             // 
             // btn_divide
             // 
-            this.btn_divide.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_divide.Location = new System.Drawing.Point(300, 76);
-            this.btn_divide.Name = "btn_divide";
-            this.btn_divide.Size = new System.Drawing.Size(95, 66);
-            this.btn_divide.TabIndex = 3;
-            this.btn_divide.Text = "÷";
-            this.btn_divide.UseVisualStyleBackColor = true;
+            this.BtnDivide.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnDivide.Location = new System.Drawing.Point(300, 76);
+            this.BtnDivide.Name = "btn_divide";
+            this.BtnDivide.Size = new System.Drawing.Size(95, 67);
+            this.BtnDivide.TabIndex = 3;
+            this.BtnDivide.Text = "÷";
+            this.BtnDivide.UseVisualStyleBackColor = true;
             // 
             // btn_square
             // 
-            this.btn_square.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_square.Location = new System.Drawing.Point(201, 76);
-            this.btn_square.Name = "btn_square";
-            this.btn_square.Size = new System.Drawing.Size(93, 66);
-            this.btn_square.TabIndex = 1;
-            this.btn_square.Text = "x^2";
-            this.btn_square.UseVisualStyleBackColor = true;
+            this.BtnSquare.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnSquare.Location = new System.Drawing.Point(201, 76);
+            this.BtnSquare.Name = "btn_square";
+            this.BtnSquare.Size = new System.Drawing.Size(93, 67);
+            this.BtnSquare.TabIndex = 1;
+            this.BtnSquare.Text = "x^2";
+            this.BtnSquare.UseVisualStyleBackColor = true;
             // 
             // btn_percent
             // 
-            this.btn_percent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_percent.Location = new System.Drawing.Point(102, 76);
-            this.btn_percent.Name = "btn_percent";
-            this.btn_percent.Size = new System.Drawing.Size(93, 66);
-            this.btn_percent.TabIndex = 0;
-            this.btn_percent.Text = "%";
-            this.btn_percent.UseVisualStyleBackColor = true;
+            this.BtnPercent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnPercent.Location = new System.Drawing.Point(102, 76);
+            this.BtnPercent.Name = "btn_percent";
+            this.BtnPercent.Size = new System.Drawing.Size(93, 67);
+            this.BtnPercent.TabIndex = 0;
+            this.BtnPercent.Text = "%";
+            this.BtnPercent.UseVisualStyleBackColor = true;
             // 
-            // btn_clear
+            // BtnClear
             // 
-            this.btn_clear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_clear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_clear.Location = new System.Drawing.Point(3, 76);
-            this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(93, 66);
-            this.btn_clear.TabIndex = 2;
-            this.btn_clear.Text = "C";
-            this.btn_clear.UseVisualStyleBackColor = true;
-            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
+            this.BtnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnClear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnClear.Location = new System.Drawing.Point(3, 76);
+            this.BtnClear.Name = "BtnClear";
+            this.BtnClear.Size = new System.Drawing.Size(93, 67);
+            this.BtnClear.TabIndex = 2;
+            this.BtnClear.Text = "C";
+            this.BtnClear.UseVisualStyleBackColor = true;
+            this.BtnClear.Click += new System.EventHandler(this.Btn_clear_Click);
             // 
             // button24
             // 
@@ -293,13 +293,13 @@
             // 
             // btn_mem_clear
             // 
-            this.btn_mem_clear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_mem_clear.Location = new System.Drawing.Point(3, 3);
-            this.btn_mem_clear.Name = "btn_mem_clear";
-            this.btn_mem_clear.Size = new System.Drawing.Size(93, 67);
-            this.btn_mem_clear.TabIndex = 20;
-            this.btn_mem_clear.Text = "MC";
-            this.btn_mem_clear.UseVisualStyleBackColor = true;
+            this.BtnMemClear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnMemClear.Location = new System.Drawing.Point(3, 3);
+            this.BtnMemClear.Name = "btn_mem_clear";
+            this.BtnMemClear.Size = new System.Drawing.Size(93, 67);
+            this.BtnMemClear.TabIndex = 20;
+            this.BtnMemClear.Text = "MC";
+            this.BtnMemClear.UseVisualStyleBackColor = true;
             // 
             // container
             // 
@@ -307,27 +307,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.container.Controls.Add(this.tbl_buttons);
-            this.container.Controls.Add(this.displayBox);
+            this.container.Controls.Add(this.DisplayBox);
             this.container.Location = new System.Drawing.Point(12, 12);
             this.container.Name = "container";
             this.container.Size = new System.Drawing.Size(398, 521);
             this.container.TabIndex = 2;
-            // 
-            // displayBox
-            // 
-            this.displayBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.displayBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.displayBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.displayBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.displayBox.Location = new System.Drawing.Point(0, 0);
-            this.displayBox.MaxLength = 64;
-            this.displayBox.Multiline = true;
-            this.displayBox.Name = "displayBox";
-            this.displayBox.ReadOnly = true;
-            this.displayBox.Size = new System.Drawing.Size(398, 80);
-            this.displayBox.TabIndex = 0;
-            this.displayBox.Text = "type";
-            this.displayBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tbl_buttons
             // 
@@ -339,30 +323,30 @@
             this.tbl_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tbl_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tbl_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tbl_buttons.Controls.Add(this.btn_equals, 3, 5);
-            this.tbl_buttons.Controls.Add(this.btn_dot, 2, 5);
-            this.tbl_buttons.Controls.Add(this.btn_0, 1, 5);
-            this.tbl_buttons.Controls.Add(this.btn_plus_minus, 0, 5);
-            this.tbl_buttons.Controls.Add(this.btn_add, 3, 4);
-            this.tbl_buttons.Controls.Add(this.btn_3, 2, 4);
-            this.tbl_buttons.Controls.Add(this.btn_2, 1, 4);
-            this.tbl_buttons.Controls.Add(this.btn_1, 0, 4);
-            this.tbl_buttons.Controls.Add(this.btn_subtract, 3, 3);
-            this.tbl_buttons.Controls.Add(this.btn_6, 2, 3);
-            this.tbl_buttons.Controls.Add(this.btn_5, 1, 3);
-            this.tbl_buttons.Controls.Add(this.btn_4, 0, 3);
-            this.tbl_buttons.Controls.Add(this.btn_multiply, 3, 2);
-            this.tbl_buttons.Controls.Add(this.btn_9, 2, 2);
-            this.tbl_buttons.Controls.Add(this.btn_8, 1, 2);
-            this.tbl_buttons.Controls.Add(this.btn_7, 0, 2);
-            this.tbl_buttons.Controls.Add(this.btn_divide, 3, 1);
-            this.tbl_buttons.Controls.Add(this.btn_square, 2, 1);
-            this.tbl_buttons.Controls.Add(this.btn_percent, 1, 1);
-            this.tbl_buttons.Controls.Add(this.btn_clear, 0, 1);
+            this.tbl_buttons.Controls.Add(this.BtnEquals, 3, 5);
+            this.tbl_buttons.Controls.Add(this.BtnDot, 2, 5);
+            this.tbl_buttons.Controls.Add(this.Btn0, 1, 5);
+            this.tbl_buttons.Controls.Add(this.BtnPlusMinus, 0, 5);
+            this.tbl_buttons.Controls.Add(this.BtnAdd, 3, 4);
+            this.tbl_buttons.Controls.Add(this.Btn3, 2, 4);
+            this.tbl_buttons.Controls.Add(this.Btn2, 1, 4);
+            this.tbl_buttons.Controls.Add(this.Btn1, 0, 4);
+            this.tbl_buttons.Controls.Add(this.BtnSubtract, 3, 3);
+            this.tbl_buttons.Controls.Add(this.Btn6, 2, 3);
+            this.tbl_buttons.Controls.Add(this.Btn5, 1, 3);
+            this.tbl_buttons.Controls.Add(this.Btn4, 0, 3);
+            this.tbl_buttons.Controls.Add(this.BtnMultiply, 3, 2);
+            this.tbl_buttons.Controls.Add(this.Btn9, 2, 2);
+            this.tbl_buttons.Controls.Add(this.Btn8, 1, 2);
+            this.tbl_buttons.Controls.Add(this.Btn7, 0, 2);
+            this.tbl_buttons.Controls.Add(this.BtnDivide, 3, 1);
+            this.tbl_buttons.Controls.Add(this.BtnSquare, 2, 1);
+            this.tbl_buttons.Controls.Add(this.BtnPercent, 1, 1);
+            this.tbl_buttons.Controls.Add(this.BtnClear, 0, 1);
             this.tbl_buttons.Controls.Add(this.button24, 3, 0);
             this.tbl_buttons.Controls.Add(this.button23, 2, 0);
             this.tbl_buttons.Controls.Add(this.button22, 1, 0);
-            this.tbl_buttons.Controls.Add(this.btn_mem_clear, 0, 0);
+            this.tbl_buttons.Controls.Add(this.BtnMemClear, 0, 0);
             this.tbl_buttons.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tbl_buttons.Location = new System.Drawing.Point(0, 83);
             this.tbl_buttons.Name = "tbl_buttons";
@@ -376,12 +360,28 @@
             this.tbl_buttons.Size = new System.Drawing.Size(398, 438);
             this.tbl_buttons.TabIndex = 2;
             // 
+            // DisplayBox
+            // 
+            this.DisplayBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DisplayBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.DisplayBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DisplayBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.DisplayBox.Location = new System.Drawing.Point(0, 0);
+            this.DisplayBox.MaxLength = 64;
+            this.DisplayBox.Multiline = true;
+            this.DisplayBox.Name = "DisplayBox";
+            this.DisplayBox.ReadOnly = true;
+            this.DisplayBox.Size = new System.Drawing.Size(398, 80);
+            this.DisplayBox.TabIndex = 0;
+            this.DisplayBox.Text = "type";
+            this.DisplayBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // calc
             // 
-            this.AcceptButton = this.btn_equals;
+            this.AcceptButton = this.BtnEquals;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btn_clear;
+            this.CancelButton = this.BtnClear;
             this.ClientSize = new System.Drawing.Size(422, 545);
             this.Controls.Add(this.container);
             this.MinimumSize = new System.Drawing.Size(260, 390);
@@ -396,33 +396,33 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_equals;
-        private System.Windows.Forms.Button btn_dot;
-        private System.Windows.Forms.Button btn_0;
-        private System.Windows.Forms.Button btn_plus_minus;
-        private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.Button btn_3;
-        private System.Windows.Forms.Button btn_2;
-        private System.Windows.Forms.Button btn_1;
-        private System.Windows.Forms.Button btn_subtract;
-        private System.Windows.Forms.Button btn_6;
-        private System.Windows.Forms.Button btn_5;
-        private System.Windows.Forms.Button btn_4;
-        private System.Windows.Forms.Button btn_multiply;
-        private System.Windows.Forms.Button btn_9;
-        private System.Windows.Forms.Button btn_8;
-        private System.Windows.Forms.Button btn_7;
-        private System.Windows.Forms.Button btn_divide;
-        private System.Windows.Forms.Button btn_square;
-        private System.Windows.Forms.Button btn_percent;
-        private System.Windows.Forms.Button btn_clear;
+        private System.Windows.Forms.Button BtnEquals;
+        private System.Windows.Forms.Button BtnDot;
+        private System.Windows.Forms.Button Btn0;
+        private System.Windows.Forms.Button BtnPlusMinus;
+        private System.Windows.Forms.Button BtnAdd;
+        private System.Windows.Forms.Button Btn3;
+        private System.Windows.Forms.Button Btn2;
+        private System.Windows.Forms.Button Btn1;
+        private System.Windows.Forms.Button BtnSubtract;
+        private System.Windows.Forms.Button Btn6;
+        private System.Windows.Forms.Button Btn5;
+        private System.Windows.Forms.Button Btn4;
+        private System.Windows.Forms.Button BtnMultiply;
+        private System.Windows.Forms.Button Btn9;
+        private System.Windows.Forms.Button Btn8;
+        private System.Windows.Forms.Button Btn7;
+        private System.Windows.Forms.Button BtnDivide;
+        private System.Windows.Forms.Button BtnSquare;
+        private System.Windows.Forms.Button BtnPercent;
+        private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button btn_mem_clear;
+        private System.Windows.Forms.Button BtnMemClear;
         private System.Windows.Forms.Panel container;
         private System.Windows.Forms.TableLayoutPanel tbl_buttons;
-        private System.Windows.Forms.TextBox displayBox;
+        private System.Windows.Forms.TextBox DisplayBox;
     }
 }
 

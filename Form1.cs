@@ -19,9 +19,9 @@ namespace calc
         }
 
         #region Operations
-        private void btn_clear_Click(object sender, EventArgs e)
+        private void Btn_clear_Click(object sender, EventArgs e)
         {
-            displayBox.Text=string.Empty;
+            DisplayBox.Text = string.Empty;
         }
         #endregion
         #region Numbers
