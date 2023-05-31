@@ -47,7 +47,7 @@ namespace calc
 
         private void BtnSubtract_Click(object sender, EventArgs e)
         {
-
+            GetNumber();
         }
 
         private void BtnMultiply_Click(object sender, EventArgs e)

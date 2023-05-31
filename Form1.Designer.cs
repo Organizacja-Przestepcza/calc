@@ -55,6 +55,7 @@
             this.container = new System.Windows.Forms.Panel();
             this.tbl_buttons = new System.Windows.Forms.TableLayoutPanel();
             this.DisplayBox = new System.Windows.Forms.TextBox();
+            this.HistoryBox = new System.Windows.Forms.TextBox();
             this.container.SuspendLayout();
             this.tbl_buttons.SuspendLayout();
             this.SuspendLayout();
@@ -326,6 +327,7 @@
             this.container.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.container.Controls.Add(this.HistoryBox);
             this.container.Controls.Add(this.tbl_buttons);
             this.container.Controls.Add(this.DisplayBox);
             this.container.Location = new System.Drawing.Point(12, 12);
@@ -384,16 +386,28 @@
             // 
             this.DisplayBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DisplayBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.DisplayBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.DisplayBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.DisplayBox.Location = new System.Drawing.Point(0, 0);
-            this.DisplayBox.MaxLength = 64;
-            this.DisplayBox.Multiline = true;
+            this.DisplayBox.Location = new System.Drawing.Point(0, 54);
+            this.DisplayBox.MaxLength = 32;
             this.DisplayBox.Name = "DisplayBox";
             this.DisplayBox.ReadOnly = true;
-            this.DisplayBox.Size = new System.Drawing.Size(398, 80);
+            this.DisplayBox.Size = new System.Drawing.Size(398, 26);
             this.DisplayBox.TabIndex = 0;
             this.DisplayBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // HistoryBox
+            // 
+            this.HistoryBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HistoryBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.HistoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.HistoryBox.Location = new System.Drawing.Point(0, 0);
+            this.HistoryBox.MaxLength = 64;
+            this.HistoryBox.Multiline = true;
+            this.HistoryBox.Name = "HistoryBox";
+            this.HistoryBox.ReadOnly = true;
+            this.HistoryBox.Size = new System.Drawing.Size(398, 48);
+            this.HistoryBox.TabIndex = 3;
+            this.HistoryBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Calc
             // 
@@ -442,6 +456,7 @@
         private System.Windows.Forms.Panel container;
         private System.Windows.Forms.TableLayoutPanel tbl_buttons;
         private System.Windows.Forms.TextBox DisplayBox;
+        private System.Windows.Forms.TextBox HistoryBox;
     }
 }
 
