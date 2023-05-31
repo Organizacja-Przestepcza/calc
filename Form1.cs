@@ -53,17 +53,17 @@ namespace calc
 
         private void BtnMultiply_Click(object sender, EventArgs e)
         {
-
+            GetNumber();
         }
 
         private void BtnDivide_Click(object sender, EventArgs e)
         {
-
+            GetNumber();
         }
 
         private void BtnSquare_Click(object sender, EventArgs e)
         {
-
+            GetNumber();
         }
 
         private void BtnPlusMinus_Click(object sender, EventArgs e)
