@@ -10,20 +10,22 @@ using System.Windows.Forms;
 
 namespace calc
 {
-    public partial class Form1 : Form
+    public partial class calc : Form
     {
   
-        public Form1()
+        public calc()
         {
             InitializeComponent();
         }
 
-      
-
-        private void Form1_Load(object sender, EventArgs e)
+        #region Operations
+        private void btn_clear_Click(object sender, EventArgs e)
         {
-        
-           
+            displayBox.Text=string.Empty;
         }
+        #endregion
+        #region Numbers
+
+        #endregion
     }
 }
