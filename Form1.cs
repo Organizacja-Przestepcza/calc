@@ -21,8 +21,7 @@ namespace calc
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
-            DisplayBox.Text = string.Empty;
-            HistoryBox.Text = string.Empty;
+            ClearDisplay();
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -43,27 +42,27 @@ namespace calc
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            GetNumber();
+            HistoryUpdate("+");
         }
 
         private void BtnSubtract_Click(object sender, EventArgs e)
         {
-            GetNumber();
+            HistoryUpdate("-");
         }
 
         private void BtnMultiply_Click(object sender, EventArgs e)
         {
-            GetNumber();
+            HistoryUpdate("*");
         }
 
         private void BtnDivide_Click(object sender, EventArgs e)
         {
-            GetNumber();
+            HistoryUpdate("/");
         }
 
         private void BtnSquare_Click(object sender, EventArgs e)
         {
-            GetNumber();
+
         }
 
         private void BtnPlusMinus_Click(object sender, EventArgs e)
@@ -73,7 +72,8 @@ namespace calc
 
         private void BtnEquals_Click(object sender, EventArgs e)
         {
-
+            string result = "";
+            HistoryUpdate("=" + result);
         }
 
         #endregion
@@ -110,13 +110,47 @@ namespace calc
         #endregion
 
         #region Calculations
-
-        private void GetNumber()
+        /// <summary>
+        /// Adds string from DisplayBox to HistoryBox
+        /// </summary>
+        /// <param name="op">String to be added at the end</param>
+        private void HistoryUpdate(string op="")
         {
-            // todo
-            throw new NotImplementedException();
+            // jeśli równanie gotowe to usuwa historie i daje rezultat
+            if (HistoryBox.Text.Contains("="))
+            {
+                HistoryBox.Text = ClearHistoryWithResult();
+            }
+
+            // jeśli display pusty a history niepusty to usuwa ostatni znak
+            else if (DisplayBox.Text == string.Empty && HistoryBox.Text != string.Empty)
+                HistoryBox.Text = HistoryBox.Text.Remove(HistoryBox.Text.Length - 1, 1);
+
+            HistoryBox.Text += DisplayBox.Text;
+            
+            // jak history pusty to nic nie pisze
+            if(HistoryBox.Text != string.Empty)
+                HistoryBox.Text += op; 
+
+            // usuwa input
+            DisplayBox.Text = string.Empty;
         }
 
+
+        private string ClearHistoryWithResult()
+        {
+            HistoryBox.Text = string.Empty;
+            var result = HistoryBox.Text.Substring(HistoryBox.Text.IndexOf('=')+1);
+            return result;
+        }
+
+        private void ClearDisplay()
+        {
+            if (DisplayBox.Text == string.Empty)
+                HistoryBox.Text = string.Empty;
+            else
+                DisplayBox.Text = string.Empty;
+        }
 
         #endregion
 
