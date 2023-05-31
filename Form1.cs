@@ -12,13 +12,13 @@ namespace calc
 {
     public partial class Calc : Form
     {
-  
         public Calc()
         {
             InitializeComponent();
         }
 
         #region Clear Buttons Click
+
         private void BtnClear_Click(object sender, EventArgs e)
         {
             DisplayBox.Text = string.Empty;
@@ -42,7 +42,7 @@ namespace calc
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-
+            GetNumber();
         }
 
         private void BtnSubtract_Click(object sender, EventArgs e)
@@ -61,6 +61,16 @@ namespace calc
         }
 
         private void BtnSquare_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnPlusMinus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnEquals_Click(object sender, EventArgs e)
         {
 
         }
@@ -96,6 +106,17 @@ namespace calc
                 DisplayBox.Text += ".";
             }
         }
+        #endregion
+
+        #region Calculations
+
+        private void GetNumber()
+        {
+            // todo
+            throw new NotImplementedException();
+        }
+
+
         #endregion
 
     }

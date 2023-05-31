@@ -68,6 +68,7 @@
             this.BtnEquals.TabIndex = 19;
             this.BtnEquals.Text = "=";
             this.BtnEquals.UseVisualStyleBackColor = true;
+            this.BtnEquals.Click += new System.EventHandler(this.BtnEquals_Click);
             // 
             // BtnDot
             // 
@@ -100,6 +101,7 @@
             this.BtnPlusMinus.TabIndex = 16;
             this.BtnPlusMinus.Text = "+/-";
             this.BtnPlusMinus.UseVisualStyleBackColor = true;
+            this.BtnPlusMinus.Click += new System.EventHandler(this.BtnPlusMinus_Click);
             // 
             // BtnAdd
             // 
