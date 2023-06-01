@@ -19,7 +19,7 @@ namespace calc
             InitializeComponent();
         }
 
-        private int number1, number2;
+        private long number1, number2;
         private string operation;
 
         #region Clear Buttons Click
@@ -31,10 +31,17 @@ namespace calc
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            if(DisplayBox.Text.Length>0)
+            string tmp = DisplayBox.Text;
+            if (tmp.Length == 0)
             {
-                DisplayBox.Text = DisplayBox.Text.Remove(DisplayBox.Text.Length-1);
+                return;
             }
+            if (tmp.Contains("-") && tmp.Length==2)
+            {
+                tmp = tmp.Remove(tmp.Length - 1);
+            }
+            tmp = tmp.Remove(tmp.Length - 1);
+            DisplayBox.Text = tmp;
         }
 
         private void BtnMemClear_Click(object sender, EventArgs e)
@@ -47,44 +54,53 @@ namespace calc
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            AddOperation("+");
+            AddOperationSimple("+");
         }
 
         private void BtnSubtract_Click(object sender, EventArgs e)
         {
-            AddOperation("-");
+            AddOperationSimple("-");
         }
 
         private void BtnMultiply_Click(object sender, EventArgs e)
         {
-            AddOperation("*");
+            AddOperationSimple("*");
         }
 
         private void BtnDivide_Click(object sender, EventArgs e)
         {
-            AddOperation("/");
+            AddOperationSimple("/");
         }
 
         private void BtnSquare_Click(object sender, EventArgs e)
         {
-            if(DisplayBox.Text==string.Empty)
-            {
-
-            }
+            AddOperationSimple("^");
+            Calculate();
+            HistoryBox.Text = number1.ToString();
         }
 
         private void BtnPercent_Click(object sender, EventArgs e)
         {
-
+            AddOperationSimple("%");
         }
 
         private void BtnPlusMinus_Click(object sender, EventArgs e)
         {
-
+            string numS = DisplayBox.Text;
+            long num;
+            long.TryParse(DisplayBox.Text, out num);
+            num = -num;
+            numS = num.ToString();
+            if (!numS.Equals("0"))
+                DisplayBox.Text = numS;
         }
 
         private void BtnEquals_Click(object sender, EventArgs e)
         {
+            if (DisplayBox.Text!=string.Empty)
+            {
+                InputParse(true);
+            }
             HistoryBox.Text = Calculate();
         }
 
@@ -115,42 +131,15 @@ namespace calc
         #endregion
 
         #region Calculations
-        /// <summary>
-        /// Updates the HistoryBox with content of DisplayBox + operation
-        /// </summary>
-        /// <param name="op">String to be added at the end</param>
-        private void HistoryUpdate(string op="")
-        {
-            var history = HistoryBox.Text;
-            
-            if (history == string.Empty)
-            {
-                history = DisplayBox.Text;
-                if (!int.TryParse(history, out number1))
-                    return;
-                operation = op;
-            }
-            else if (DisplayBox.Text == string.Empty)
-                history = history.Remove(history.Length - 1, 1);
-
-            history += op;
-            HistoryBox.Text = history;
-            // usuwa input
-            DisplayBox.Text = string.Empty;
-        }
-
-        private string ClearHistoryWithResult()
-        {
-            var result = HistoryBox.Text.Substring(HistoryBox.Text.IndexOf('=')+1);
-            HistoryBox.Text = string.Empty;
-            return result;
-        }
 
         private void ClearDisplay()
         {
             if (DisplayBox.Text == string.Empty)
             {
                 HistoryBox.Text = string.Empty;
+                number1 = 0;
+                number2 = 0;
+                operation = string.Empty;
             }
             else
                 DisplayBox.Text = string.Empty;
@@ -158,52 +147,93 @@ namespace calc
 
         private string Calculate()
         {
-            int result = 0;
-            if(number2==0)
+            long result = 0;
+            if (number2==0)
             {
-                if (!int.TryParse(DisplayBox.Text, out number2))
-                {
-                    ClearDisplay();
-                }
-                HistoryBox.Text += DisplayBox.Text;
+                InputParse(true);
             }
-            switch(operation)
+            switch (operation)
             {
                 case "+": result = number1 + number2; break;
                 case "-": result = number1 - number2; break;
-                case "/": Division(); break;
+                case "/":
+                    if (number2 != 0)
+                        result = number1 / number2;
+                    else
+                    {
+                        MessageBox.Show("You can't divide by zero","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        result = number1;
+                    }
+                    break;
+                    /*string resultDivStr;
+                    if (number1 % number2 != 0)
+                    {
+                        float resultF = (float) number1/number2;
+                        resultDivStr = resultF.ToString();
+                    }
+                    else
+                    {
+                        int resultI = number1/number2;
+                        resultDivStr = resultI.ToString();
+                        number1 = result;
+                    }
+                    DisplayBox.Text = string.Empty;
+                    return resultDivStr;*/
                 case "*": result = number1 * number2; break;
+                case "^": result = number1 * number1; break;
+                case "%":
+                    if (number2 != 0)
+                        result = number1 % number2;
+                    else
+                    {
+                        MessageBox.Show("You can't divide by zero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        result = number1;
+                    }
+                    break;
+                    
             }
-            
+            number1 = result;
+            DisplayBox.Text = string.Empty;
             string resultStr = result.ToString();
             return resultStr;
         }
 
         /// <summary>
-        /// Adds a character to the DisplayBox only if there isn't one already
+        /// Parses text from DisplayBox into an <see cref="long"/> <see cref="number1"/> or <see cref="number2"/> depending on <paramref name="b"/>.
         /// </summary>
-        private void AddOperation(string c)
+        /// <param name="b">If set to <see langword="true"/> outputs to number2, otherwise to number1</param>
+        private void InputParse(bool b=false)
         {
-            string input = DisplayBox.Text;
-            if (!input.Contains(c))
-            {
-                 input += c;
-            }
-            else if (input.Length > 1)
-            {
-                Calculate();
-            }
+            if (b)
+                long.TryParse(DisplayBox.Text, out number2);
             else
-            {
-                input = input.Remove(input.Length - 1, 1);
-            }
+                long.TryParse(DisplayBox.Text, out number1);
         }
-        private void Division()
+
+        private void AddOperationSimple(string op)
         {
-            if(number1%number2==0)
-            {
-                return;
-            }
+            operation = op;
+            ShowEquation();
+            DisplayBox.Text = string.Empty;
+        }
+
+        private void ShowEquation()
+        {
+            if(number1 == 0)
+                InputParse();
+            string toHistory = number1.ToString() + operation;
+            HistoryBox.Text=toHistory;
+        }
+
+        /// <summary>
+        /// Switches sign of a number in a string
+        /// </summary>
+        /// <param name="num">Number to be multiplied by -1</param>
+        private string ReverseSignString(long num)
+        {
+            num = -num;
+            string numStr = num.ToString();
+            return numStr;
         }
 
         #endregion
