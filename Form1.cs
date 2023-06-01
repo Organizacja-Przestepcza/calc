@@ -47,22 +47,22 @@ namespace calc
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            AddOperation("+");
+            AddOperationSimple("+");
         }
 
         private void BtnSubtract_Click(object sender, EventArgs e)
         {
-            AddOperation("-");
+            AddOperationSimple("-");
         }
 
         private void BtnMultiply_Click(object sender, EventArgs e)
         {
-            AddOperation("*");
+            AddOperationComplex("*");
         }
 
         private void BtnDivide_Click(object sender, EventArgs e)
         {
-            AddOperation("/");
+            AddOperationComplex("/");
         }
 
         private void BtnSquare_Click(object sender, EventArgs e)
@@ -115,42 +115,15 @@ namespace calc
         #endregion
 
         #region Calculations
-        /// <summary>
-        /// Updates the HistoryBox with content of DisplayBox + operation
-        /// </summary>
-        /// <param name="op">String to be added at the end</param>
-        private void HistoryUpdate(string op="")
-        {
-            var history = HistoryBox.Text;
-            
-            if (history == string.Empty)
-            {
-                history = DisplayBox.Text;
-                if (!int.TryParse(history, out number1))
-                    return;
-                operation = op;
-            }
-            else if (DisplayBox.Text == string.Empty)
-                history = history.Remove(history.Length - 1, 1);
-
-            history += op;
-            HistoryBox.Text = history;
-            // usuwa input
-            DisplayBox.Text = string.Empty;
-        }
-
-        private string ClearHistoryWithResult()
-        {
-            var result = HistoryBox.Text.Substring(HistoryBox.Text.IndexOf('=')+1);
-            HistoryBox.Text = string.Empty;
-            return result;
-        }
 
         private void ClearDisplay()
         {
             if (DisplayBox.Text == string.Empty)
             {
                 HistoryBox.Text = string.Empty;
+                number1 = 0;
+                number2 = 0;
+                operation = string.Empty;
             }
             else
                 DisplayBox.Text = string.Empty;
@@ -161,11 +134,7 @@ namespace calc
             int result = 0;
             if(number2==0)
             {
-                if (!int.TryParse(DisplayBox.Text, out number2))
-                {
-                    ClearDisplay();
-                }
-                HistoryBox.Text += DisplayBox.Text;
+                int.TryParse(DisplayBox.Text, out number2);
             }
             switch(operation)
             {
@@ -174,30 +143,32 @@ namespace calc
                 case "/": Division(); break;
                 case "*": result = number1 * number2; break;
             }
-            
+            number1 = result;
+            DisplayBox.Text=string.Empty;
             string resultStr = result.ToString();
             return resultStr;
         }
 
-        /// <summary>
-        /// Adds a character to the DisplayBox only if there isn't one already
-        /// </summary>
-        private void AddOperation(string c)
+        private void AddOperationSimple(string op)
         {
-            string input = DisplayBox.Text;
-            if (!input.Contains(c))
-            {
-                 input += c;
-            }
-            else if (input.Length > 1)
-            {
-                Calculate();
-            }
-            else
-            {
-                input = input.Remove(input.Length - 1, 1);
-            }
+            int.TryParse(DisplayBox.Text, out number1);
+
+            operation = op;
+            ShowEquation();
+            DisplayBox.Text = string.Empty;
         }
+
+        private void AddOperationComplex(string op)
+        {
+
+        }
+
+        private void ShowEquation()
+        {
+            string toHistory = number1.ToString() + operation;
+            HistoryBox.Text=toHistory;
+        }
+
         private void Division()
         {
             if(number1%number2==0)
