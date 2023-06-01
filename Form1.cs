@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace calc
@@ -22,11 +14,51 @@ namespace calc
         private long number1, number2;
         private string operation;
 
-        #region Clear Buttons Click
+        /// <summary>
+        /// Handles key presses
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+            switch (c)
+            {
+                case '0': Btn0.PerformClick(); break;
+                case '1': Btn1.PerformClick(); break;
+                case '2': Btn2.PerformClick(); break;
+                case '3': Btn3.PerformClick(); break;
+                case '4': Btn4.PerformClick(); break;
+                case '5': Btn5.PerformClick(); break;
+                case '6': Btn6.PerformClick(); break;
+                case '7': Btn7.PerformClick(); break;
+                case '8': Btn8.PerformClick(); break;
+                case '9': Btn9.PerformClick(); break;
+                case '+': BtnAdd.PerformClick(); break;
+                case '-': BtnSubtract.PerformClick(); break;
+                case '*': BtnMultiply.PerformClick(); break;
+                case '/': BtnDivide.PerformClick(); break;
+                case '%': BtnModulo.PerformClick(); break;
+                case (char)8: BtnDelete.PerformClick(); break;
+
+            }
+
+        }
+
+        /// <summary>
+        /// Focuses on BtnEquals
+        /// </summary>
+        private void InputFocus()
+        {
+            BtnEquals.Focus();
+        }
+
+        #region Clear+Memory Buttons Click
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
             ClearDisplay();
+            InputFocus();
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -42,46 +74,39 @@ namespace calc
             }
             tmp = tmp.Remove(tmp.Length - 1);
             DisplayBox.Text = tmp;
+            InputFocus();
         }
 
         private void BtnMemClear_Click(object sender, EventArgs e)
         {
-            DisplayBox.Text = number1.ToString()+operation;
+            InputFocus();
         }
+
+        private void BtnMemGet_Click(object sender, EventArgs e)
+        {
+            InputFocus();
+        }
+
+        private void BtnMemAdd_Click(object sender, EventArgs e)
+        {
+            InputFocus();
+        }
+
+        private void BtnMemSub_Click(object sender, EventArgs e)
+        {
+            InputFocus();
+        }
+
         #endregion
 
-        #region Operations Click
-
-        private void BtnAdd_Click(object sender, EventArgs e)
-        {
-            AddOperationSimple("+");
-        }
-
-        private void BtnSubtract_Click(object sender, EventArgs e)
-        {
-            AddOperationSimple("-");
-        }
-
-        private void BtnMultiply_Click(object sender, EventArgs e)
-        {
-            AddOperationSimple("*");
-        }
-
-        private void BtnDivide_Click(object sender, EventArgs e)
-        {
-            AddOperationSimple("/");
-        }
+        #region Buttons Click
 
         private void BtnSquare_Click(object sender, EventArgs e)
         {
-            AddOperationSimple("^");
+            AddOperation("^");
             Calculate();
             HistoryBox.Text = number1.ToString();
-        }
-
-        private void BtnPercent_Click(object sender, EventArgs e)
-        {
-            AddOperationSimple("%");
+            InputFocus();
         }
 
         private void BtnPlusMinus_Click(object sender, EventArgs e)
@@ -102,32 +127,37 @@ namespace calc
                 InputParse(true);
             }
             HistoryBox.Text = Calculate();
+            InputFocus();
         }
 
-        #endregion
-
-        #region Numbers Click
-
-        private void Btn0_Click(object sender, EventArgs e) => DisplayBox.Text += "0";
-
-        private void Btn1_Click(object sender, EventArgs e) => DisplayBox.Text += "1";
-
-        private void Btn2_Click(object sender, EventArgs e) => DisplayBox.Text += "2";
-
-        private void Btn3_Click(object sender, EventArgs e) => DisplayBox.Text += "3";
-
-        private void Btn4_Click(object sender, EventArgs e) => DisplayBox.Text += "4";
-
-        private void Btn5_Click(object sender, EventArgs e) => DisplayBox.Text += "5";
-
-        private void Btn6_Click(object sender, EventArgs e) => DisplayBox.Text += "6";
-
-        private void Btn7_Click(object sender, EventArgs e) => DisplayBox.Text += "7";
-
-        private void Btn8_Click(object sender, EventArgs e) => DisplayBox.Text += "8";
-
-        private void Btn9_Click(object sender, EventArgs e) => DisplayBox.Text += "9";
-
+        /// <summary>
+        /// Click event for all number buttons and 5 operators: +, -, *, /, %
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnNumOp_Click(object sender, EventArgs e)
+        {
+            var btn = (Button)sender;
+            switch(btn.Name)
+            {
+                case "Btn0": DisplayBox.Text += "0"; break;
+                case "Btn1": DisplayBox.Text += "1"; break;
+                case "Btn2": DisplayBox.Text += "2"; break;
+                case "Btn3": DisplayBox.Text += "3"; break;
+                case "Btn4": DisplayBox.Text += "4"; break;
+                case "Btn5": DisplayBox.Text += "5"; break;
+                case "Btn6": DisplayBox.Text += "6"; break;
+                case "Btn7": DisplayBox.Text += "7"; break;
+                case "Btn8": DisplayBox.Text += "8"; break;
+                case "Btn9": DisplayBox.Text += "9"; break;
+                case "BtnAdd": AddOperation("+"); break;
+                case "BtnSubtract": AddOperation("-"); break;
+                case "BtnMultiply": AddOperation("*"); break;
+                case "BtnDivide": AddOperation("/"); break;
+                case "BtnModulo": AddOperation("%"); break;
+            }
+            InputFocus();
+        }
         #endregion
 
         #region Calculations
@@ -165,20 +195,6 @@ namespace calc
                         result = number1;
                     }
                     break;
-                    /*string resultDivStr;
-                    if (number1 % number2 != 0)
-                    {
-                        float resultF = (float) number1/number2;
-                        resultDivStr = resultF.ToString();
-                    }
-                    else
-                    {
-                        int resultI = number1/number2;
-                        resultDivStr = resultI.ToString();
-                        number1 = result;
-                    }
-                    DisplayBox.Text = string.Empty;
-                    return resultDivStr;*/
                 case "*": result = number1 * number2; break;
                 case "^": result = number1 * number1; break;
                 case "%":
@@ -210,7 +226,7 @@ namespace calc
                 long.TryParse(DisplayBox.Text, out number1);
         }
 
-        private void AddOperationSimple(string op)
+        private void AddOperation(string op)
         {
             operation = op;
             ShowEquation();
@@ -225,18 +241,12 @@ namespace calc
             HistoryBox.Text=toHistory;
         }
 
-        /// <summary>
-        /// Switches sign of a number in a string
-        /// </summary>
-        /// <param name="num">Number to be multiplied by -1</param>
-        private string ReverseSignString(long num)
-        {
-            num = -num;
-            string numStr = num.ToString();
-            return numStr;
-        }
-
         #endregion
+
+        private void Calc_ResizeEnd(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }
