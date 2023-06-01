@@ -191,7 +191,7 @@ namespace calc
                         result = number1 / number2;
                     else
                     {
-                        MessageBox.Show("You can't divide by zero","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("You can't divide by zero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         result = number1;
                     }
                     break;
@@ -215,7 +215,7 @@ namespace calc
         }
 
         /// <summary>
-        /// Parses text from DisplayBox into an <see cref="long"/> <see cref="number1"/> or <see cref="number2"/> depending on <paramref name="b"/>.
+        /// Parses text from DisplayBox into a <see cref="long"/> <see cref="number1"/> or <see cref="number2"/> depending on <paramref name="b"/>.
         /// </summary>
         /// <param name="b">If set to <see langword="true"/> outputs to number2, otherwise to number1</param>
         private void InputParse(bool b=false)
