@@ -19,7 +19,7 @@ namespace calc
             InitializeComponent();
         }
 
-        private int number1, number2;
+        private long number1, number2;
         private string operation;
 
         #region Clear Buttons Click
@@ -31,10 +31,17 @@ namespace calc
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            if(DisplayBox.Text.Length>0)
+            string tmp = DisplayBox.Text;
+            if (tmp.Length == 0)
             {
-                DisplayBox.Text = DisplayBox.Text.Remove(DisplayBox.Text.Length-1);
+                return;
             }
+            if (tmp.Contains("-") && tmp.Length==2)
+            {
+                tmp = tmp.Remove(tmp.Length - 1);
+            }
+            tmp = tmp.Remove(tmp.Length - 1);
+            DisplayBox.Text = tmp;
         }
 
         private void BtnMemClear_Click(object sender, EventArgs e)
@@ -57,34 +64,43 @@ namespace calc
 
         private void BtnMultiply_Click(object sender, EventArgs e)
         {
-            AddOperationComplex("*");
+            AddOperationSimple("*");
         }
 
         private void BtnDivide_Click(object sender, EventArgs e)
         {
-            AddOperationComplex("/");
+            AddOperationSimple("/");
         }
 
         private void BtnSquare_Click(object sender, EventArgs e)
         {
-            if(DisplayBox.Text==string.Empty)
-            {
-
-            }
+            AddOperationSimple("^");
+            Calculate();
+            HistoryBox.Text = number1.ToString();
         }
 
         private void BtnPercent_Click(object sender, EventArgs e)
         {
-
+            AddOperationSimple("%");
         }
 
         private void BtnPlusMinus_Click(object sender, EventArgs e)
         {
-
+            string numS = DisplayBox.Text;
+            long num;
+            long.TryParse(DisplayBox.Text, out num);
+            num = -num;
+            numS = num.ToString();
+            if (!numS.Equals("0"))
+                DisplayBox.Text = numS;
         }
 
         private void BtnEquals_Click(object sender, EventArgs e)
         {
+            if (DisplayBox.Text!=string.Empty)
+            {
+                InputParse(true);
+            }
             HistoryBox.Text = Calculate();
         }
 
@@ -131,50 +147,93 @@ namespace calc
 
         private string Calculate()
         {
-            int result = 0;
-            if(number2==0)
+            long result = 0;
+            if (number2==0)
             {
-                int.TryParse(DisplayBox.Text, out number2);
+                InputParse(true);
             }
-            switch(operation)
+            switch (operation)
             {
                 case "+": result = number1 + number2; break;
                 case "-": result = number1 - number2; break;
-                case "/": Division(); break;
+                case "/":
+                    if (number2 != 0)
+                        result = number1 / number2;
+                    else
+                    {
+                        MessageBox.Show("You can't divide by zero","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        result = number1;
+                    }
+                    break;
+                    /*string resultDivStr;
+                    if (number1 % number2 != 0)
+                    {
+                        float resultF = (float) number1/number2;
+                        resultDivStr = resultF.ToString();
+                    }
+                    else
+                    {
+                        int resultI = number1/number2;
+                        resultDivStr = resultI.ToString();
+                        number1 = result;
+                    }
+                    DisplayBox.Text = string.Empty;
+                    return resultDivStr;*/
                 case "*": result = number1 * number2; break;
+                case "^": result = number1 * number1; break;
+                case "%":
+                    if (number2 != 0)
+                        result = number1 % number2;
+                    else
+                    {
+                        MessageBox.Show("You can't divide by zero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        result = number1;
+                    }
+                    break;
+                    
             }
             number1 = result;
-            DisplayBox.Text=string.Empty;
+            DisplayBox.Text = string.Empty;
             string resultStr = result.ToString();
             return resultStr;
         }
 
+        /// <summary>
+        /// Parses text from DisplayBox into an <see cref="long"/> <see cref="number1"/> or <see cref="number2"/> depending on <paramref name="b"/>.
+        /// </summary>
+        /// <param name="b">If set to <see langword="true"/> outputs to number2, otherwise to number1</param>
+        private void InputParse(bool b=false)
+        {
+            if (b)
+                long.TryParse(DisplayBox.Text, out number2);
+            else
+                long.TryParse(DisplayBox.Text, out number1);
+        }
+
         private void AddOperationSimple(string op)
         {
-            int.TryParse(DisplayBox.Text, out number1);
-
             operation = op;
             ShowEquation();
             DisplayBox.Text = string.Empty;
         }
 
-        private void AddOperationComplex(string op)
-        {
-
-        }
-
         private void ShowEquation()
         {
+            if(number1 == 0)
+                InputParse();
             string toHistory = number1.ToString() + operation;
             HistoryBox.Text=toHistory;
         }
 
-        private void Division()
+        /// <summary>
+        /// Switches sign of a number in a string
+        /// </summary>
+        /// <param name="num">Number to be multiplied by -1</param>
+        private string ReverseSignString(long num)
         {
-            if(number1%number2==0)
-            {
-                return;
-            }
+            num = -num;
+            string numStr = num.ToString();
+            return numStr;
         }
 
         #endregion

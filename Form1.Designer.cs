@@ -74,7 +74,7 @@
             // BtnPercent
             // 
             this.BtnPercent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnPercent.Location = new System.Drawing.Point(102, 76);
+            this.BtnPercent.Location = new System.Drawing.Point(201, 76);
             this.BtnPercent.Name = "BtnPercent";
             this.BtnPercent.Size = new System.Drawing.Size(93, 67);
             this.BtnPercent.TabIndex = 18;
@@ -250,7 +250,7 @@
             // BtnSquare
             // 
             this.BtnSquare.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnSquare.Location = new System.Drawing.Point(201, 76);
+            this.BtnSquare.Location = new System.Drawing.Point(102, 76);
             this.BtnSquare.Name = "BtnSquare";
             this.BtnSquare.Size = new System.Drawing.Size(93, 67);
             this.BtnSquare.TabIndex = 1;
@@ -377,14 +377,14 @@
             this.tbl_buttons.Controls.Add(this.Btn8, 1, 2);
             this.tbl_buttons.Controls.Add(this.Btn7, 0, 2);
             this.tbl_buttons.Controls.Add(this.BtnDivide, 3, 1);
-            this.tbl_buttons.Controls.Add(this.BtnSquare, 2, 1);
             this.tbl_buttons.Controls.Add(this.BtnClear, 0, 1);
             this.tbl_buttons.Controls.Add(this.button24, 3, 0);
             this.tbl_buttons.Controls.Add(this.button23, 2, 0);
             this.tbl_buttons.Controls.Add(this.button22, 1, 0);
             this.tbl_buttons.Controls.Add(this.BtnMemClear, 0, 0);
             this.tbl_buttons.Controls.Add(this.BtnDelete, 2, 5);
-            this.tbl_buttons.Controls.Add(this.BtnPercent, 1, 1);
+            this.tbl_buttons.Controls.Add(this.BtnSquare, 1, 1);
+            this.tbl_buttons.Controls.Add(this.BtnPercent, 2, 1);
             this.tbl_buttons.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tbl_buttons.Location = new System.Drawing.Point(0, 83);
             this.tbl_buttons.Name = "tbl_buttons";
