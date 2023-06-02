@@ -11,7 +11,7 @@ namespace calc
             InitializeComponent();
         }
 
-        private long number1, number2;
+        private long number1, number2, memory;
         private string operation;
 
         /// <summary>
@@ -42,7 +42,6 @@ namespace calc
                 case (char)8: BtnDelete.PerformClick(); break;
 
             }
-
         }
 
         /// <summary>
@@ -79,24 +78,36 @@ namespace calc
 
         private void BtnMemClear_Click(object sender, EventArgs e)
         {
+            memory = 0;
             InputFocus();
         }
 
         private void BtnMemGet_Click(object sender, EventArgs e)
         {
+            DisplayBox.Text = memory.ToString();
             InputFocus();
         }
 
         private void BtnMemAdd_Click(object sender, EventArgs e)
         {
-            InputFocus();
+            memory += MemOperation();
         }
 
         private void BtnMemSub_Click(object sender, EventArgs e)
         {
-            InputFocus();
+            memory -= MemOperation();
         }
 
+        private long MemOperation()
+        {
+            long tmp=0;
+            if(!long.TryParse(DisplayBox.Text, out tmp))
+            {
+                long.TryParse(HistoryBox.Text, out tmp);
+            }
+            InputFocus();
+            return tmp;
+        }
         #endregion
 
         #region Buttons Click
@@ -206,6 +217,7 @@ namespace calc
                         result = number1;
                     }
                     break;
+                default: result = number2; break;
                     
             }
             number1 = result;
@@ -245,7 +257,14 @@ namespace calc
 
         private void Calc_ResizeEnd(object sender, EventArgs e)
         {
-
+            if((float)Width/Height>0.95)
+            {
+                MessageBox.Show("a");
+            }
+            if((float)Height/Width>1.85)
+            {
+                MessageBox.Show("b");
+            }
         }
 
     }
