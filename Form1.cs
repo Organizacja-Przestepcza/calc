@@ -247,7 +247,7 @@ namespace calc
 
         private void ShowEquation()
         {
-            if(number1 == 0)
+            if(number1 == 0 && DisplayBox.Text!=string.Empty)
                 InputParse();
             string toHistory = number1.ToString() + operation;
             HistoryBox.Text=toHistory;
@@ -255,7 +255,7 @@ namespace calc
 
         #endregion
 
-        private void Calc_ResizeEnd(object sender, EventArgs e)
+        /*private void Calc_ResizeEnd(object sender, EventArgs e)
         {
             if((float)Width/Height>0.95)
             {
@@ -265,7 +265,7 @@ namespace calc
             {
                 MessageBox.Show("b");
             }
-        }
+        }*/
 
     }
 }
