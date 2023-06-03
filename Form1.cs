@@ -13,7 +13,6 @@ namespace calc
 
         private long number1, number2, memory;
         private string operation;
-
         /// <summary>
         /// Handles key presses
         /// </summary>
@@ -39,6 +38,7 @@ namespace calc
                 case '*': BtnMultiply.PerformClick(); break;
                 case '/': BtnDivide.PerformClick(); break;
                 case '%': BtnModulo.PerformClick(); break;
+                case '=': BtnEquals.PerformClick(); break;
                 case (char)8: BtnDelete.PerformClick(); break;
 
             }
@@ -52,15 +52,7 @@ namespace calc
             BtnEquals.Focus();
         }
 
-        #region Clear+Memory Buttons Click
-
-        private void BtnClear_Click(object sender, EventArgs e)
-        {
-            ClearDisplay();
-            InputFocus();
-        }
-
-        private void BtnDelete_Click(object sender, EventArgs e)
+        private void DeleteInputChar()
         {
             string tmp = DisplayBox.Text;
             if (tmp.Length == 0)
@@ -73,29 +65,6 @@ namespace calc
             }
             tmp = tmp.Remove(tmp.Length - 1);
             DisplayBox.Text = tmp;
-            InputFocus();
-        }
-
-        private void BtnMemClear_Click(object sender, EventArgs e)
-        {
-            memory = 0;
-            InputFocus();
-        }
-
-        private void BtnMemGet_Click(object sender, EventArgs e)
-        {
-            DisplayBox.Text = memory.ToString();
-            InputFocus();
-        }
-
-        private void BtnMemAdd_Click(object sender, EventArgs e)
-        {
-            memory += MemOperation();
-        }
-
-        private void BtnMemSub_Click(object sender, EventArgs e)
-        {
-            memory -= MemOperation();
         }
 
         private long MemOperation()
@@ -104,22 +73,12 @@ namespace calc
             {
                 long.TryParse(HistoryBox.Text, out tmp);
             }
+            LblMemory.Visible = true;
             InputFocus();
             return tmp;
         }
-        #endregion
 
-        #region Buttons Click
-
-        private void BtnSquare_Click(object sender, EventArgs e)
-        {
-            AddOperation("^");
-            Calculate();
-            HistoryBox.Text = number1.ToString();
-            InputFocus();
-        }
-
-        private void BtnPlusMinus_Click(object sender, EventArgs e)
+        private void PlusMinus_Method()
         {
             string numS;
             long.TryParse(DisplayBox.Text, out long num);
@@ -129,24 +88,16 @@ namespace calc
                 DisplayBox.Text = numS;
         }
 
-        private void BtnEquals_Click(object sender, EventArgs e)
-        {
-            if (DisplayBox.Text != string.Empty)
-            {
-                InputParse(true);
-            }
-            HistoryBox.Text = Calculate();
-            InputFocus();
-        }
-
         /// <summary>
-        /// Click event for all number buttons and 5 operators: +, -, *, /, %
+        /// Click event for all buttons
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BtnNumOp_Click(object sender, EventArgs e)
+        private void Btn_Click(object sender, EventArgs e)
         {
             var btn = (Button)sender;
+            if (operation == "=")
+                InputParse();
             switch (btn.Name)
             {
                 case "Btn0": DisplayBox.Text += "0"; break;
@@ -164,12 +115,18 @@ namespace calc
                 case "BtnMultiply": AddOperation("*"); break;
                 case "BtnDivide": AddOperation("/"); break;
                 case "BtnModulo": AddOperation("%"); break;
+                case "BtnSquare": AddOperation("^"); Calculate(); HistoryBox.Text = number1.ToString(); break;
+                case "BtnPlusMinus": PlusMinus_Method(); break;
+                case "BtnEquals": if (DisplayBox.Text != string.Empty) InputParse(true); HistoryBox.Text = Calculate(); break;
+                case "BtnMemGet": DisplayBox.Text = memory.ToString(); break;
+                case "BtnMemAdd": memory += MemOperation(); LblMemory.Text = "Memory: " + memory.ToString(); break;
+                case "BtnMemSub": memory -= MemOperation(); LblMemory.Text = "Memory: " + memory.ToString(); break;
+                case "BtnMemClear": memory = 0; LblMemory.Visible = false; break;
+                case "BtnClear": ClearDisplay(); break;
+                case "BtnDelete": DeleteInputChar(); break;
             }
             InputFocus();
         }
-        #endregion
-
-        #region Calculations
 
         private void ClearDisplay()
         {
@@ -215,10 +172,12 @@ namespace calc
                         result = number1;
                     }
                     break;
+                case "=": result = number1;  break;
                 default: result = number2; break;
 
             }
             number1 = result;
+            operation= "=";
             DisplayBox.Text = string.Empty;
             string resultStr = result.ToString();
             return resultStr;
@@ -253,7 +212,5 @@ namespace calc
             toHistory = number1.ToString() + operation;
             HistoryBox.Text = toHistory;
         }
-
-        #endregion
     }
 }
