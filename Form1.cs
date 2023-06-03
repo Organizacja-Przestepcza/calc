@@ -192,9 +192,10 @@ namespace calc
                 Console.WriteLine("safe!");
             }
             catch (OverflowException)
-            { MessageBox.Show("Result is too large or too small", "Overflow"); number1 = 0; return "Overflow"; }
+            { MessageBox.Show("Result is too large or too small", "Overflow"); ClearDisplay(); return "Error"; }
             number1 = result; 
             operation = "=";
+            number2 = 0;
             DisplayBox.Text = string.Empty;
             string resultStr = result.ToString();
             return resultStr;
