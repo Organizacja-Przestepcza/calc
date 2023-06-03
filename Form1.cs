@@ -19,7 +19,10 @@ namespace calc
             InitializeComponent();
         }
 
-        private bool floatOperation = false;
+        private long number1, number2;
+        private float fnumber1, fnumber2;
+        private string operation;
+
 
         #region Clear Buttons Click
 
@@ -30,15 +33,22 @@ namespace calc
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            if(DisplayBox.Text.Length>0)
+            string tmp = DisplayBox.Text;
+            if (tmp.Length == 0)
             {
-                DisplayBox.Text = DisplayBox.Text.Remove(DisplayBox.Text.Length-1);
+                return;
             }
+            if (tmp.Contains("-") && tmp.Length == 2)
+            {
+                tmp = tmp.Remove(tmp.Length - 1);
+            }
+            tmp = tmp.Remove(tmp.Length - 1);
+            DisplayBox.Text = tmp;
         }
 
         private void BtnMemClear_Click(object sender, EventArgs e)
         {
-
+            DisplayBox.Text = number1.ToString() + operation;
         }
         #endregion
 
@@ -46,39 +56,54 @@ namespace calc
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            HistoryUpdate("+");
+            AddOperationSimple("+");
         }
 
         private void BtnSubtract_Click(object sender, EventArgs e)
         {
-            HistoryUpdate("-");
+            AddOperationSimple("-");
         }
 
         private void BtnMultiply_Click(object sender, EventArgs e)
         {
-            HistoryUpdate("*");
+            AddOperationSimple("*");
         }
 
         private void BtnDivide_Click(object sender, EventArgs e)
         {
-            HistoryUpdate("/");
+            AddOperationSimple("/");
         }
 
         private void BtnSquare_Click(object sender, EventArgs e)
         {
+            AddOperationSimple("^");
+            Calculate();
+            HistoryBox.Text = number1.ToString();
+        }
 
+        private void BtnPercent_Click(object sender, EventArgs e)
+        {
+            AddOperationSimple("%");
         }
 
         private void BtnPlusMinus_Click(object sender, EventArgs e)
         {
-
+            string numS = DisplayBox.Text;
+            long num;
+            long.TryParse(DisplayBox.Text, out num);
+            num = -num;
+            numS = num.ToString();
+            if (!numS.Equals("0"))
+                DisplayBox.Text = numS;
         }
 
         private void BtnEquals_Click(object sender, EventArgs e)
         {
-            string result = "";
-            Calculate();
-            HistoryUpdate("=" + result);
+            if (DisplayBox.Text != string.Empty)
+            {
+                InputParse(true);
+            }
+            HistoryBox.Text = Calculate();
         }
 
         #endregion
@@ -105,106 +130,182 @@ namespace calc
 
         private void Btn9_Click(object sender, EventArgs e) => DisplayBox.Text += "9";
 
-        private void BtnDot_Click(object sender, EventArgs e)
-        {
-            if (!DisplayBox.Text.Contains("."))
-            {
-                DisplayBox.Text += ".";
-            }
-        }
         #endregion
 
         #region Calculations
-        /// <summary>
-        /// Adds string from DisplayBox to HistoryBox
-        /// </summary>
-        /// <param name="op">String to be added at the end</param>
-        private void HistoryUpdate(string op="")
-        {
-            var history = HistoryBox.Text;
-            // jeśli równanie gotowe to usuwa historie i daje rezultat
-            if (history != string.Empty)
-            {
-                if (!char.IsDigit(history.Last()))
-                {
-                    history = ClearHistoryWithResult();
-                }
-
-                // zamienia ostatni znak jeśli nie dostał liczby
-                else if (DisplayBox.Text == string.Empty)
-                    history = history.Remove(history.Length - 1, 1);
-            }
-            history += CheckForFloat();
-            
-            
-            // jak history pusty to nic nie pisze
-            if(history != string.Empty)
-                history += op;
-            HistoryBox.Text = history;
-            // usuwa input
-            DisplayBox.Text = string.Empty;
-        }
-
-        /// <summary>
-        /// Checks if the input is a float and formats it
-        /// </summary>
-        /// <returns><see cref="string"/> with formatted number</returns>
-        private string CheckForFloat()
-        {
-            var number = DisplayBox.Text;
-            if(number == string.Empty)
-            {
-                return number;
-            }
-            if(number.Contains('.'))
-            {
-                floatOperation = true;
-                string mantise = number.Substring(number.IndexOf('.'));
-                if (mantise.Length <= 0)
-                    number = number.Remove(number.Length - 1, 1);
-                else
-                {
-                    for (int i = 0; i < mantise.Length; i++)
-                    {
-                        var ind = mantise.Length - 1 - i;
-                        if ((mantise[ind] == '0') || (mantise[ind] == '.'))
-                            number = number.Remove(number.Length - 1, 1);
-                        else
-                            break;
-                    }
-                }
-            }
-            return number;
-        }
-
-        private string ClearHistoryWithResult()
-        {
-            var result = HistoryBox.Text.Substring(HistoryBox.Text.IndexOf('=')+1);
-            HistoryBox.Text = string.Empty;
-            return result;
-        }
 
         private void ClearDisplay()
         {
             if (DisplayBox.Text == string.Empty)
             {
                 HistoryBox.Text = string.Empty;
-                floatOperation = false;
+                number1 = 0;
+                number2 = 0;
+                operation = string.Empty;
             }
             else
                 DisplayBox.Text = string.Empty;
         }
 
-        private void Calculate()
+        private string Calculate()
         {
-            if(floatOperation)
+            long result = 0;
+            float fresult = 0;
+            if (number2 == 0)
             {
+                InputParse(true);
+            }
+            if (number1 != 0 && number2 != 0)
+            {
+                fresult = 0;
+                switch (operation)
+                {
+                    case "+": result = number1 + number2; break;
+                    case "-": result = number1 - number2; break;
+                    case "/":
+                        if (number2 != 0 && number1 % number2 == 0)
+                            result = number1 / number2;
+                        else if (number1 % number2 != 0)
+                        {
+                            fnumber1 = (float)number1;
+                            fnumber2 = (float)number2;
+                            fresult = fnumber1 / fnumber2;
+                            result = 0;
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("You can't divide by zero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            result = number1;
+                        }
+                        break;
+
+                    case "*": result = number1 * number2; break;
+                    case "^": result = number1 * number1; break;
+                    case "%":
+                        if (number2 != 0)
+                            result = number1 % number2;
+                        else
+                        {
+                            MessageBox.Show("You can't divide by zero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            result = number1;
+                        }
+                        break;
+
+                }
+                number1 = result;
+                fnumber2 = 0;
+
+            }
+            else if ((fnumber1 != 0 && fnumber2 != 0) || fnumber1 != 0 && number2 != 0)
+            {
+                if (number2 != 0)
+                    fnumber2 = (float)number2;
+
+                result = 0;
+                switch (operation)
+                {
+                    case "+": fresult = fnumber1 + fnumber2; break;
+                    case "-": fresult = fnumber1 - fnumber2; break;
+                    case "/":
+                        if (fnumber2 != 0)
+                            fresult = fnumber1 / fnumber2;
+                        else
+                        {
+                            MessageBox.Show("You can't divide by zero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            fresult = fnumber1;
+                        }
+                        break;
+
+                    case "*": fresult = fnumber1 * fnumber2; break;
+                    case "^": fresult = fnumber1 * fnumber1; break;
+                    case "%":
+                        if (fnumber2 != 0)
+                            fresult = fnumber1 % fnumber2;
+                        else
+                        {
+                            MessageBox.Show("You can't divide by zero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            fresult = fnumber1;
+                        }
+                        break;
+
+                }
+                fnumber1 = fresult;
+                fnumber2 = 0;
+            }
+
+            string resultStr;
+            if (result != 0)
+            {
+                number1 = result;
+                DisplayBox.Text = string.Empty;
+                resultStr = result.ToString();
+            }
+            else
+            {
+                fnumber1 = fresult;
+                DisplayBox.Text = string.Empty;
+                resultStr = fresult.ToString();
+            }
+
+            return resultStr;
+        }
+
+        /// <summary>
+        /// Parses text from DisplayBox into an <see cref="long"/> <see cref="number1"/> or <see cref="number2"/> depending on <paramref name="b"/>.
+        /// </summary>
+        /// <param name="b">If set to <see langword="true"/> outputs to number2, otherwise to number1</param>
+        private void InputParse(bool b = false)
+        {
+            if (b && !DisplayBox.Text.Contains('.'))
+                long.TryParse(DisplayBox.Text, out number2);
+            else if (b && DisplayBox.Text.Contains('.'))
+                float.TryParse(DisplayBox.Text, out fnumber2);
+            else if (!b && !DisplayBox.Text.Contains('.'))
+                long.TryParse(DisplayBox.Text, out number1);
+            else if (!b && DisplayBox.Text.Contains('.'))
+                float.TryParse(DisplayBox.Text, out fnumber1);
+        }
+
+        private void AddOperationSimple(string op)
+        {
+            operation = op;
+            ShowEquation();
+            DisplayBox.Text = string.Empty;
+        }
+
+        private void ShowEquation()
+        {
+            string toHistory;
+            if (number2 != 0)
+            {
+                toHistory = fnumber1.ToString() + operation;
+                HistoryBox.Text = toHistory;
 
             }
             else
             {
-
+                InputParse();
+                toHistory = number1.ToString() + operation;
+                HistoryBox.Text = toHistory;
             }
+        }
+
+        /// <summary>
+        /// Switches sign of a number in a string
+        /// </summary>
+        /// <param name="num">Number to be multiplied by -1</param>
+        private string ReverseSignString(long num)
+        {
+            num = -num;
+            string numStr = num.ToString();
+            return numStr;
+        }
+        private string ReverseSignString(float num)
+        {
+            num = -num;
+            string numStr = num.ToString();
+            return numStr;
         }
 
         #endregion
