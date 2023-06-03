@@ -96,7 +96,7 @@ namespace calc
         private void Btn_Click(object sender, EventArgs e)
         {
             var btn = (Button)sender;
-            if (operation == "=")
+            if (operation == "=" && DisplayBox.Text != string.Empty)
                 InputParse();
             switch (btn.Name)
             {
