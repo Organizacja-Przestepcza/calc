@@ -416,7 +416,7 @@
             this.DisplayBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.DisplayBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.DisplayBox.Location = new System.Drawing.Point(0, 32);
-            this.DisplayBox.MaxLength = 32;
+            this.DisplayBox.MaxLength = 18;
             this.DisplayBox.Name = "DisplayBox";
             this.DisplayBox.ReadOnly = true;
             this.DisplayBox.Size = new System.Drawing.Size(280, 26);

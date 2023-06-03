@@ -78,6 +78,16 @@ namespace calc
             return tmp;
         }
 
+        private void NumberWrite(string n)
+        {
+            if(DisplayBox.Text.Length == 18)
+            {
+                MessageBox.Show("Max 18 numbers");
+                return;
+            }
+            DisplayBox.Text += n;
+        }
+
         private void PlusMinus_Method()
         {
             string numS;
@@ -100,16 +110,16 @@ namespace calc
                 InputParse();
             switch (btn.Name)
             {
-                case "Btn0": DisplayBox.Text += "0"; break;
-                case "Btn1": DisplayBox.Text += "1"; break;
-                case "Btn2": DisplayBox.Text += "2"; break;
-                case "Btn3": DisplayBox.Text += "3"; break;
-                case "Btn4": DisplayBox.Text += "4"; break;
-                case "Btn5": DisplayBox.Text += "5"; break;
-                case "Btn6": DisplayBox.Text += "6"; break;
-                case "Btn7": DisplayBox.Text += "7"; break;
-                case "Btn8": DisplayBox.Text += "8"; break;
-                case "Btn9": DisplayBox.Text += "9"; break;
+                case "Btn0": NumberWrite("0"); break;
+                case "Btn1": NumberWrite("1"); break;
+                case "Btn2": NumberWrite("2"); break;
+                case "Btn3": NumberWrite("3"); break;
+                case "Btn4": NumberWrite("4"); break;
+                case "Btn5": NumberWrite("5"); break;
+                case "Btn6": NumberWrite("6"); break;
+                case "Btn7": NumberWrite("7"); break;
+                case "Btn8": NumberWrite("8"); break;
+                case "Btn9": NumberWrite("9"); break;
                 case "BtnAdd": AddOperation("+"); break;
                 case "BtnSubtract": AddOperation("-"); break;
                 case "BtnMultiply": AddOperation("*"); break;
@@ -176,8 +186,15 @@ namespace calc
                 default: result = number2; break;
 
             }
-            number1 = result;
-            operation= "=";
+            try
+            {
+                long test = checked(result * 2);
+                Console.WriteLine("safe!");
+            }
+            catch (OverflowException)
+            { MessageBox.Show("Result is too large or too small", "Overflow"); number1 = 0; return "Overflow"; }
+            number1 = result; 
+            operation = "=";
             DisplayBox.Text = string.Empty;
             string resultStr = result.ToString();
             return resultStr;
