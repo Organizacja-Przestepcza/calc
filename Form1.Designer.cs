@@ -65,7 +65,7 @@
             this.BtnEquals.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnEquals.Location = new System.Drawing.Point(213, 276);
             this.BtnEquals.Name = "BtnEquals";
-            this.BtnEquals.Size = new System.Drawing.Size(64, 55);
+            this.BtnEquals.Size = new System.Drawing.Size(64, 59);
             this.BtnEquals.TabIndex = 19;
             this.BtnEquals.Text = "=";
             this.BtnEquals.UseVisualStyleBackColor = true;
@@ -88,7 +88,7 @@
             this.Btn0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Btn0.Location = new System.Drawing.Point(73, 276);
             this.Btn0.Name = "Btn0";
-            this.Btn0.Size = new System.Drawing.Size(64, 55);
+            this.Btn0.Size = new System.Drawing.Size(64, 59);
             this.Btn0.TabIndex = 17;
             this.Btn0.Text = "0";
             this.Btn0.UseVisualStyleBackColor = true;
@@ -99,7 +99,7 @@
             this.BtnPlusMinus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnPlusMinus.Location = new System.Drawing.Point(3, 276);
             this.BtnPlusMinus.Name = "BtnPlusMinus";
-            this.BtnPlusMinus.Size = new System.Drawing.Size(64, 55);
+            this.BtnPlusMinus.Size = new System.Drawing.Size(64, 59);
             this.BtnPlusMinus.TabIndex = 16;
             this.BtnPlusMinus.Text = "+/-";
             this.BtnPlusMinus.UseVisualStyleBackColor = true;
@@ -264,7 +264,7 @@
             this.BtnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnDelete.Location = new System.Drawing.Point(143, 276);
             this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(64, 55);
+            this.BtnDelete.Size = new System.Drawing.Size(64, 59);
             this.BtnDelete.TabIndex = 0;
             this.BtnDelete.Text = "Del";
             this.BtnDelete.UseVisualStyleBackColor = true;
@@ -338,9 +338,9 @@
             this.container.Controls.Add(this.HistoryBox);
             this.container.Controls.Add(this.tbl_buttons);
             this.container.Controls.Add(this.DisplayBox);
-            this.container.Location = new System.Drawing.Point(12, 12);
+            this.container.Location = new System.Drawing.Point(12, 27);
             this.container.Name = "container";
-            this.container.Size = new System.Drawing.Size(280, 417);
+            this.container.Size = new System.Drawing.Size(280, 402);
             this.container.TabIndex = 2;
             // 
             // HistoryBox
@@ -352,10 +352,9 @@
             this.HistoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.HistoryBox.Location = new System.Drawing.Point(0, 0);
             this.HistoryBox.MaxLength = 64;
-            this.HistoryBox.Multiline = true;
             this.HistoryBox.Name = "HistoryBox";
             this.HistoryBox.ReadOnly = true;
-            this.HistoryBox.Size = new System.Drawing.Size(280, 48);
+            this.HistoryBox.Size = new System.Drawing.Size(280, 26);
             this.HistoryBox.TabIndex = 3;
             this.HistoryBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.HistoryBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
@@ -366,10 +365,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbl_buttons.ColumnCount = 4;
-            this.tbl_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tbl_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tbl_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tbl_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tbl_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tbl_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tbl_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tbl_buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tbl_buttons.Controls.Add(this.BtnEquals, 3, 5);
             this.tbl_buttons.Controls.Add(this.Btn0, 1, 5);
             this.tbl_buttons.Controls.Add(this.BtnPlusMinus, 0, 5);
@@ -391,11 +390,11 @@
             this.tbl_buttons.Controls.Add(this.BtnMemAdd, 2, 0);
             this.tbl_buttons.Controls.Add(this.BtnMemGet, 1, 0);
             this.tbl_buttons.Controls.Add(this.BtnMemClear, 0, 0);
-            this.tbl_buttons.Controls.Add(this.BtnDelete, 2, 5);
             this.tbl_buttons.Controls.Add(this.BtnSquare, 1, 1);
             this.tbl_buttons.Controls.Add(this.BtnModulo, 2, 1);
+            this.tbl_buttons.Controls.Add(this.BtnDelete, 2, 5);
             this.tbl_buttons.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbl_buttons.Location = new System.Drawing.Point(0, 83);
+            this.tbl_buttons.Location = new System.Drawing.Point(0, 64);
             this.tbl_buttons.Name = "tbl_buttons";
             this.tbl_buttons.RowCount = 6;
             this.tbl_buttons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -404,7 +403,7 @@
             this.tbl_buttons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.tbl_buttons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.tbl_buttons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.tbl_buttons.Size = new System.Drawing.Size(280, 334);
+            this.tbl_buttons.Size = new System.Drawing.Size(280, 338);
             this.tbl_buttons.TabIndex = 2;
             // 
             // DisplayBox
@@ -415,7 +414,7 @@
             this.DisplayBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.DisplayBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.DisplayBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DisplayBox.Location = new System.Drawing.Point(0, 54);
+            this.DisplayBox.Location = new System.Drawing.Point(0, 32);
             this.DisplayBox.MaxLength = 32;
             this.DisplayBox.Name = "DisplayBox";
             this.DisplayBox.ReadOnly = true;
@@ -436,7 +435,6 @@
             this.MinimumSize = new System.Drawing.Size(260, 440);
             this.Name = "Calc";
             this.Text = "Calc";
-            this.ResizeEnd += new System.EventHandler(this.Calc_ResizeEnd);
             this.container.ResumeLayout(false);
             this.container.PerformLayout();
             this.tbl_buttons.ResumeLayout(false);

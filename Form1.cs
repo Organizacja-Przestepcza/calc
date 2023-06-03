@@ -67,7 +67,7 @@ namespace calc
             {
                 return;
             }
-            if (tmp.Contains("-") && tmp.Length==2)
+            if (tmp.Contains("-") && tmp.Length == 2)
             {
                 tmp = tmp.Remove(tmp.Length - 1);
             }
@@ -100,8 +100,7 @@ namespace calc
 
         private long MemOperation()
         {
-            long tmp=0;
-            if(!long.TryParse(DisplayBox.Text, out tmp))
+            if (!long.TryParse(DisplayBox.Text, out long tmp))
             {
                 long.TryParse(HistoryBox.Text, out tmp);
             }
@@ -122,9 +121,8 @@ namespace calc
 
         private void BtnPlusMinus_Click(object sender, EventArgs e)
         {
-            string numS = DisplayBox.Text;
-            long num;
-            long.TryParse(DisplayBox.Text, out num);
+            string numS;
+            long.TryParse(DisplayBox.Text, out long num);
             num = -num;
             numS = num.ToString();
             if (!numS.Equals("0"))
@@ -133,7 +131,7 @@ namespace calc
 
         private void BtnEquals_Click(object sender, EventArgs e)
         {
-            if (DisplayBox.Text!=string.Empty)
+            if (DisplayBox.Text != string.Empty)
             {
                 InputParse(true);
             }
@@ -149,7 +147,7 @@ namespace calc
         private void BtnNumOp_Click(object sender, EventArgs e)
         {
             var btn = (Button)sender;
-            switch(btn.Name)
+            switch (btn.Name)
             {
                 case "Btn0": DisplayBox.Text += "0"; break;
                 case "Btn1": DisplayBox.Text += "1"; break;
@@ -188,8 +186,8 @@ namespace calc
 
         private string Calculate()
         {
-            long result = 0;
-            if (number2==0)
+            long result;
+            if (number2 == 0)
             {
                 InputParse(true);
             }
@@ -218,7 +216,7 @@ namespace calc
                     }
                     break;
                 default: result = number2; break;
-                    
+
             }
             number1 = result;
             DisplayBox.Text = string.Empty;
@@ -227,10 +225,10 @@ namespace calc
         }
 
         /// <summary>
-        /// Parses text from DisplayBox into a <see cref="long"/> <see cref="number1"/> or <see cref="number2"/> depending on <paramref name="b"/>.
+        /// Parses text from DisplayBox into a <see cref="long"/> number1 or number2 depending on <paramref name="b"/>.
         /// </summary>
         /// <param name="b">If set to <see langword="true"/> outputs to number2, otherwise to number1</param>
-        private void InputParse(bool b=false)
+        private void InputParse(bool b = false)
         {
             if (b)
                 long.TryParse(DisplayBox.Text, out number2);
@@ -240,6 +238,8 @@ namespace calc
 
         private void AddOperation(string op)
         {
+            if (number1 != 0 && DisplayBox.Text != string.Empty)
+            { InputParse(true); Calculate(); }
             operation = op;
             ShowEquation();
             DisplayBox.Text = string.Empty;
@@ -247,25 +247,13 @@ namespace calc
 
         private void ShowEquation()
         {
-            if(number1 == 0 && DisplayBox.Text!=string.Empty)
+            string toHistory;
+            if (number1 == 0 && DisplayBox.Text != string.Empty)
                 InputParse();
-            string toHistory = number1.ToString() + operation;
-            HistoryBox.Text=toHistory;
+            toHistory = number1.ToString() + operation;
+            HistoryBox.Text = toHistory;
         }
 
         #endregion
-
-        /*private void Calc_ResizeEnd(object sender, EventArgs e)
-        {
-            if((float)Width/Height>0.95)
-            {
-                MessageBox.Show("a");
-            }
-            if((float)Height/Width>1.85)
-            {
-                MessageBox.Show("b");
-            }
-        }*/
-
     }
 }
