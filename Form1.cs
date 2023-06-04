@@ -206,7 +206,6 @@ namespace calc
             try
             {
                 long test = checked(result * 2);
-                Console.WriteLine("safe!");
             }
             catch (OverflowException)
             { MessageBox.Show("Result is too large or too small", "Overflow"); ClearDisplay(); return "Error"; }
