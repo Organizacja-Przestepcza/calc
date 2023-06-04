@@ -45,13 +45,16 @@ namespace calc
         }
 
         /// <summary>
-        /// Focuses on BtnEquals
+        /// Focuses on = Button
         /// </summary>
         private void InputFocus()
         {
             BtnEquals.Focus();
         }
 
+        /// <summary>
+        /// Deletes last character from DisplayBox
+        /// </summary>
         private void DeleteInputChar()
         {
             string tmp = DisplayBox.Text;
@@ -59,7 +62,7 @@ namespace calc
             {
                 return;
             }
-            if (tmp.Contains("-") && tmp.Length == 2)
+            if (tmp.Contains("-") && tmp.Length == 2) // if it's only one digit with a minus it removes the minus as well
             {
                 tmp = tmp.Remove(tmp.Length - 1);
             }
@@ -67,20 +70,28 @@ namespace calc
             DisplayBox.Text = tmp;
         }
 
+        /// <summary>
+        /// Parses DisplayBox or HistoryBox and shows memory label
+        /// </summary>
+        /// <returns>Parsed value</returns>
         private long MemOperation()
         {
+            // if it cant parse displaybox it tries to parse historybox
             if (!long.TryParse(DisplayBox.Text, out long tmp))
             {
                 long.TryParse(HistoryBox.Text, out tmp);
             }
             LblMemory.Visible = true;
-            InputFocus();
             return tmp;
         }
 
+        /// <summary>
+        /// Adds a string to DisplayBox unless there's more than 18 characters
+        /// </summary>
+        /// <param name="n">String to be added to DisplayBox</param>
         private void NumberWrite(string n)
         {
-            if(DisplayBox.Text.Length == 18)
+            if(DisplayBox.Text.Length >= 18)
             {
                 MessageBox.Show("Max 18 numbers");
                 return;
@@ -88,6 +99,9 @@ namespace calc
             DisplayBox.Text += n;
         }
 
+        /// <summary>
+        /// Multiplies the number in DisplayBox by -1 and shows it
+        /// </summary>
         private void PlusMinus_Method()
         {
             string numS;
@@ -138,6 +152,9 @@ namespace calc
             InputFocus();
         }
 
+        /// <summary>
+        /// Clears DisplayBox if it's not empty, otherwise clears HistoryBox and all variables (except memory)
+        /// </summary>
         private void ClearDisplay()
         {
             if (DisplayBox.Text == string.Empty)
@@ -213,15 +230,22 @@ namespace calc
                 long.TryParse(DisplayBox.Text, out number1);
         }
 
+        /// <summary>
+        /// Adds the <paramref name="op"/> to operation and calls <see cref="ShowEquation"/>
+        /// </summary>
+        /// <param name="op">String containg an operation</param>
         private void AddOperation(string op)
         {
-            if (number1 != 0 && DisplayBox.Text != string.Empty)
+            if (number1 != 0 && DisplayBox.Text != string.Empty) // if it's a second operation, calculates the previous one
             { InputParse(true); Calculate(); }
             operation = op;
             ShowEquation();
             DisplayBox.Text = string.Empty;
         }
 
+        /// <summary>
+        /// Shows first number and operation
+        /// </summary>
         private void ShowEquation()
         {
             string toHistory;
