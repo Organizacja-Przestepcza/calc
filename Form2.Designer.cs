@@ -1,6 +1,6 @@
 ﻿namespace calc
 {
-    partial class Calc
+    partial class CalcF
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.LblMemory = new System.Windows.Forms.Label();
+            this.HistoryBox = new System.Windows.Forms.TextBox();
+            this.tbl_buttons = new System.Windows.Forms.TableLayoutPanel();
             this.BtnEquals = new System.Windows.Forms.Button();
-            this.BtnModulo = new System.Windows.Forms.Button();
             this.Btn0 = new System.Windows.Forms.Button();
             this.BtnPlusMinus = new System.Windows.Forms.Button();
             this.BtnAdd = new System.Windows.Forms.Button();
@@ -45,329 +47,34 @@
             this.Btn8 = new System.Windows.Forms.Button();
             this.Btn7 = new System.Windows.Forms.Button();
             this.BtnDivide = new System.Windows.Forms.Button();
-            this.BtnSquare = new System.Windows.Forms.Button();
-            this.BtnDelete = new System.Windows.Forms.Button();
             this.BtnClear = new System.Windows.Forms.Button();
             this.BtnMemSub = new System.Windows.Forms.Button();
             this.BtnMemAdd = new System.Windows.Forms.Button();
             this.BtnMemGet = new System.Windows.Forms.Button();
             this.BtnMemClear = new System.Windows.Forms.Button();
+            this.BtnSquare = new System.Windows.Forms.Button();
+            this.BtnModulo = new System.Windows.Forms.Button();
+            this.BtnDelete = new System.Windows.Forms.Button();
             this.container = new System.Windows.Forms.Panel();
-            this.HistoryBox = new System.Windows.Forms.TextBox();
-            this.tbl_buttons = new System.Windows.Forms.TableLayoutPanel();
             this.DisplayBox = new System.Windows.Forms.TextBox();
-            this.LblMemory = new System.Windows.Forms.Label();
-            this.container.SuspendLayout();
+            this.BtnCalcI = new System.Windows.Forms.Button();
             this.tbl_buttons.SuspendLayout();
+            this.container.SuspendLayout();
             this.SuspendLayout();
             // 
-            // BtnEquals
+            // LblMemory
             // 
-            this.BtnEquals.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnEquals.Location = new System.Drawing.Point(283, 341);
-            this.BtnEquals.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnEquals.Name = "BtnEquals";
-            this.BtnEquals.Size = new System.Drawing.Size(86, 71);
-            this.BtnEquals.TabIndex = 19;
-            this.BtnEquals.Text = "=";
-            this.BtnEquals.UseVisualStyleBackColor = true;
-            this.BtnEquals.Click += new System.EventHandler(this.Btn_Click);
-            this.BtnEquals.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
-            // 
-            // BtnModulo
-            // 
-            this.BtnModulo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnModulo.Location = new System.Drawing.Point(190, 45);
-            this.BtnModulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnModulo.Name = "BtnModulo";
-            this.BtnModulo.Size = new System.Drawing.Size(85, 66);
-            this.BtnModulo.TabIndex = 18;
-            this.BtnModulo.Text = "%";
-            this.BtnModulo.UseVisualStyleBackColor = true;
-            this.BtnModulo.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // Btn0
-            // 
-            this.Btn0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn0.Location = new System.Drawing.Point(97, 341);
-            this.Btn0.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Btn0.Name = "Btn0";
-            this.Btn0.Size = new System.Drawing.Size(85, 71);
-            this.Btn0.TabIndex = 17;
-            this.Btn0.Text = "0";
-            this.Btn0.UseVisualStyleBackColor = true;
-            this.Btn0.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // BtnPlusMinus
-            // 
-            this.BtnPlusMinus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnPlusMinus.Location = new System.Drawing.Point(4, 341);
-            this.BtnPlusMinus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnPlusMinus.Name = "BtnPlusMinus";
-            this.BtnPlusMinus.Size = new System.Drawing.Size(85, 71);
-            this.BtnPlusMinus.TabIndex = 16;
-            this.BtnPlusMinus.Text = "+/-";
-            this.BtnPlusMinus.UseVisualStyleBackColor = true;
-            this.BtnPlusMinus.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // BtnAdd
-            // 
-            this.BtnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnAdd.Location = new System.Drawing.Point(283, 267);
-            this.BtnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(86, 66);
-            this.BtnAdd.TabIndex = 15;
-            this.BtnAdd.Text = "+";
-            this.BtnAdd.UseVisualStyleBackColor = true;
-            this.BtnAdd.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // Btn3
-            // 
-            this.Btn3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn3.Location = new System.Drawing.Point(190, 267);
-            this.Btn3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Btn3.Name = "Btn3";
-            this.Btn3.Size = new System.Drawing.Size(85, 66);
-            this.Btn3.TabIndex = 12;
-            this.Btn3.Text = "3";
-            this.Btn3.UseVisualStyleBackColor = true;
-            this.Btn3.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // Btn2
-            // 
-            this.Btn2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn2.Location = new System.Drawing.Point(97, 267);
-            this.Btn2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Btn2.Name = "Btn2";
-            this.Btn2.Size = new System.Drawing.Size(85, 66);
-            this.Btn2.TabIndex = 14;
-            this.Btn2.Text = "2";
-            this.Btn2.UseVisualStyleBackColor = true;
-            this.Btn2.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // Btn1
-            // 
-            this.Btn1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn1.Location = new System.Drawing.Point(4, 267);
-            this.Btn1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Btn1.Name = "Btn1";
-            this.Btn1.Size = new System.Drawing.Size(85, 66);
-            this.Btn1.TabIndex = 13;
-            this.Btn1.Text = "1";
-            this.Btn1.UseVisualStyleBackColor = true;
-            this.Btn1.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // BtnSubtract
-            // 
-            this.BtnSubtract.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnSubtract.Location = new System.Drawing.Point(283, 193);
-            this.BtnSubtract.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnSubtract.Name = "BtnSubtract";
-            this.BtnSubtract.Size = new System.Drawing.Size(86, 66);
-            this.BtnSubtract.TabIndex = 11;
-            this.BtnSubtract.Text = "\t-";
-            this.BtnSubtract.UseVisualStyleBackColor = true;
-            this.BtnSubtract.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // Btn6
-            // 
-            this.Btn6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn6.Location = new System.Drawing.Point(190, 193);
-            this.Btn6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Btn6.Name = "Btn6";
-            this.Btn6.Size = new System.Drawing.Size(85, 66);
-            this.Btn6.TabIndex = 10;
-            this.Btn6.Text = "6";
-            this.Btn6.UseVisualStyleBackColor = true;
-            this.Btn6.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // Btn5
-            // 
-            this.Btn5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn5.Location = new System.Drawing.Point(97, 193);
-            this.Btn5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Btn5.Name = "Btn5";
-            this.Btn5.Size = new System.Drawing.Size(85, 66);
-            this.Btn5.TabIndex = 9;
-            this.Btn5.Text = "5";
-            this.Btn5.UseVisualStyleBackColor = true;
-            this.Btn5.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // Btn4
-            // 
-            this.Btn4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn4.Location = new System.Drawing.Point(4, 193);
-            this.Btn4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Btn4.Name = "Btn4";
-            this.Btn4.Size = new System.Drawing.Size(85, 66);
-            this.Btn4.TabIndex = 8;
-            this.Btn4.Text = "4";
-            this.Btn4.UseVisualStyleBackColor = true;
-            this.Btn4.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // BtnMultiply
-            // 
-            this.BtnMultiply.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnMultiply.Location = new System.Drawing.Point(283, 119);
-            this.BtnMultiply.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnMultiply.Name = "BtnMultiply";
-            this.BtnMultiply.Size = new System.Drawing.Size(86, 66);
-            this.BtnMultiply.TabIndex = 7;
-            this.BtnMultiply.Text = "×";
-            this.BtnMultiply.UseVisualStyleBackColor = true;
-            this.BtnMultiply.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // Btn9
-            // 
-            this.Btn9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn9.Location = new System.Drawing.Point(190, 119);
-            this.Btn9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Btn9.Name = "Btn9";
-            this.Btn9.Size = new System.Drawing.Size(85, 66);
-            this.Btn9.TabIndex = 6;
-            this.Btn9.Text = "9";
-            this.Btn9.UseVisualStyleBackColor = true;
-            this.Btn9.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // Btn8
-            // 
-            this.Btn8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn8.Location = new System.Drawing.Point(97, 119);
-            this.Btn8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Btn8.Name = "Btn8";
-            this.Btn8.Size = new System.Drawing.Size(85, 66);
-            this.Btn8.TabIndex = 5;
-            this.Btn8.Text = "8";
-            this.Btn8.UseVisualStyleBackColor = true;
-            this.Btn8.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // Btn7
-            // 
-            this.Btn7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn7.Location = new System.Drawing.Point(4, 119);
-            this.Btn7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Btn7.Name = "Btn7";
-            this.Btn7.Size = new System.Drawing.Size(85, 66);
-            this.Btn7.TabIndex = 4;
-            this.Btn7.Text = "7";
-            this.Btn7.UseVisualStyleBackColor = true;
-            this.Btn7.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // BtnDivide
-            // 
-            this.BtnDivide.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnDivide.Location = new System.Drawing.Point(283, 45);
-            this.BtnDivide.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnDivide.Name = "BtnDivide";
-            this.BtnDivide.Size = new System.Drawing.Size(86, 66);
-            this.BtnDivide.TabIndex = 3;
-            this.BtnDivide.Text = "÷";
-            this.BtnDivide.UseVisualStyleBackColor = true;
-            this.BtnDivide.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // BtnSquare
-            // 
-            this.BtnSquare.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnSquare.Location = new System.Drawing.Point(97, 45);
-            this.BtnSquare.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnSquare.Name = "BtnSquare";
-            this.BtnSquare.Size = new System.Drawing.Size(85, 66);
-            this.BtnSquare.TabIndex = 1;
-            this.BtnSquare.Text = "x^2";
-            this.BtnSquare.UseVisualStyleBackColor = true;
-            this.BtnSquare.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // BtnDelete
-            // 
-            this.BtnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnDelete.Location = new System.Drawing.Point(190, 341);
-            this.BtnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(85, 71);
-            this.BtnDelete.TabIndex = 0;
-            this.BtnDelete.Text = "Del";
-            this.BtnDelete.UseVisualStyleBackColor = true;
-            this.BtnDelete.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // BtnClear
-            // 
-            this.BtnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnClear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnClear.Location = new System.Drawing.Point(4, 45);
-            this.BtnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnClear.Name = "BtnClear";
-            this.BtnClear.Size = new System.Drawing.Size(85, 66);
-            this.BtnClear.TabIndex = 2;
-            this.BtnClear.Text = "C";
-            this.BtnClear.UseVisualStyleBackColor = true;
-            this.BtnClear.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // BtnMemSub
-            // 
-            this.BtnMemSub.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnMemSub.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.BtnMemSub.Location = new System.Drawing.Point(283, 4);
-            this.BtnMemSub.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnMemSub.Name = "BtnMemSub";
-            this.BtnMemSub.Size = new System.Drawing.Size(86, 33);
-            this.BtnMemSub.TabIndex = 23;
-            this.BtnMemSub.Text = "M-";
-            this.BtnMemSub.UseVisualStyleBackColor = true;
-            this.BtnMemSub.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // BtnMemAdd
-            // 
-            this.BtnMemAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnMemAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.BtnMemAdd.Location = new System.Drawing.Point(190, 4);
-            this.BtnMemAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnMemAdd.Name = "BtnMemAdd";
-            this.BtnMemAdd.Size = new System.Drawing.Size(85, 33);
-            this.BtnMemAdd.TabIndex = 22;
-            this.BtnMemAdd.Text = "M+";
-            this.BtnMemAdd.UseVisualStyleBackColor = true;
-            this.BtnMemAdd.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // BtnMemGet
-            // 
-            this.BtnMemGet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnMemGet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.BtnMemGet.Location = new System.Drawing.Point(97, 4);
-            this.BtnMemGet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnMemGet.Name = "BtnMemGet";
-            this.BtnMemGet.Size = new System.Drawing.Size(85, 33);
-            this.BtnMemGet.TabIndex = 21;
-            this.BtnMemGet.Text = "MR";
-            this.BtnMemGet.UseVisualStyleBackColor = true;
-            this.BtnMemGet.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // BtnMemClear
-            // 
-            this.BtnMemClear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnMemClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.BtnMemClear.Location = new System.Drawing.Point(4, 4);
-            this.BtnMemClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnMemClear.Name = "BtnMemClear";
-            this.BtnMemClear.Size = new System.Drawing.Size(85, 33);
-            this.BtnMemClear.TabIndex = 20;
-            this.BtnMemClear.Text = "MC";
-            this.BtnMemClear.UseVisualStyleBackColor = true;
-            this.BtnMemClear.Click += new System.EventHandler(this.Btn_Click);
-            // 
-            // container
-            // 
-            this.container.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.container.Controls.Add(this.HistoryBox);
-            this.container.Controls.Add(this.tbl_buttons);
-            this.container.Controls.Add(this.DisplayBox);
-            this.container.Location = new System.Drawing.Point(16, 33);
-            this.container.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.container.Name = "container";
-            this.container.Size = new System.Drawing.Size(373, 495);
-            this.container.TabIndex = 2;
+            this.LblMemory.AutoSize = true;
+            this.LblMemory.Location = new System.Drawing.Point(59, 13);
+            this.LblMemory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblMemory.MaximumSize = new System.Drawing.Size(330, 18);
+            this.LblMemory.MinimumSize = new System.Drawing.Size(330, 18);
+            this.LblMemory.Name = "LblMemory";
+            this.LblMemory.Size = new System.Drawing.Size(330, 18);
+            this.LblMemory.TabIndex = 5;
+            this.LblMemory.Text = "Memory: 0";
+            this.LblMemory.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LblMemory.Visible = false;
             // 
             // HistoryBox
             // 
@@ -377,7 +84,7 @@
             this.HistoryBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.HistoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.HistoryBox.Location = new System.Drawing.Point(0, 0);
-            this.HistoryBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HistoryBox.Margin = new System.Windows.Forms.Padding(4);
             this.HistoryBox.MaxLength = 64;
             this.HistoryBox.Name = "HistoryBox";
             this.HistoryBox.ReadOnly = true;
@@ -422,7 +129,7 @@
             this.tbl_buttons.Controls.Add(this.BtnDelete, 2, 5);
             this.tbl_buttons.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tbl_buttons.Location = new System.Drawing.Point(0, 79);
-            this.tbl_buttons.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbl_buttons.Margin = new System.Windows.Forms.Padding(4);
             this.tbl_buttons.Name = "tbl_buttons";
             this.tbl_buttons.RowCount = 6;
             this.tbl_buttons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -434,6 +141,314 @@
             this.tbl_buttons.Size = new System.Drawing.Size(373, 416);
             this.tbl_buttons.TabIndex = 2;
             // 
+            // BtnEquals
+            // 
+            this.BtnEquals.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnEquals.Location = new System.Drawing.Point(283, 341);
+            this.BtnEquals.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnEquals.Name = "BtnEquals";
+            this.BtnEquals.Size = new System.Drawing.Size(86, 71);
+            this.BtnEquals.TabIndex = 19;
+            this.BtnEquals.Text = "=";
+            this.BtnEquals.UseVisualStyleBackColor = true;
+            this.BtnEquals.Click += new System.EventHandler(this.Btn_Click);
+            this.BtnEquals.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            // 
+            // Btn0
+            // 
+            this.Btn0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn0.Location = new System.Drawing.Point(97, 341);
+            this.Btn0.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn0.Name = "Btn0";
+            this.Btn0.Size = new System.Drawing.Size(85, 71);
+            this.Btn0.TabIndex = 17;
+            this.Btn0.Text = "0";
+            this.Btn0.UseVisualStyleBackColor = true;
+            this.Btn0.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // BtnPlusMinus
+            // 
+            this.BtnPlusMinus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnPlusMinus.Location = new System.Drawing.Point(4, 341);
+            this.BtnPlusMinus.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnPlusMinus.Name = "BtnPlusMinus";
+            this.BtnPlusMinus.Size = new System.Drawing.Size(85, 71);
+            this.BtnPlusMinus.TabIndex = 16;
+            this.BtnPlusMinus.Text = "+/-";
+            this.BtnPlusMinus.UseVisualStyleBackColor = true;
+            this.BtnPlusMinus.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // BtnAdd
+            // 
+            this.BtnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnAdd.Location = new System.Drawing.Point(283, 267);
+            this.BtnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnAdd.Name = "BtnAdd";
+            this.BtnAdd.Size = new System.Drawing.Size(86, 66);
+            this.BtnAdd.TabIndex = 15;
+            this.BtnAdd.Text = "+";
+            this.BtnAdd.UseVisualStyleBackColor = true;
+            this.BtnAdd.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // Btn3
+            // 
+            this.Btn3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn3.Location = new System.Drawing.Point(190, 267);
+            this.Btn3.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn3.Name = "Btn3";
+            this.Btn3.Size = new System.Drawing.Size(85, 66);
+            this.Btn3.TabIndex = 12;
+            this.Btn3.Text = "3";
+            this.Btn3.UseVisualStyleBackColor = true;
+            this.Btn3.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // Btn2
+            // 
+            this.Btn2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn2.Location = new System.Drawing.Point(97, 267);
+            this.Btn2.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn2.Name = "Btn2";
+            this.Btn2.Size = new System.Drawing.Size(85, 66);
+            this.Btn2.TabIndex = 14;
+            this.Btn2.Text = "2";
+            this.Btn2.UseVisualStyleBackColor = true;
+            this.Btn2.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // Btn1
+            // 
+            this.Btn1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn1.Location = new System.Drawing.Point(4, 267);
+            this.Btn1.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn1.Name = "Btn1";
+            this.Btn1.Size = new System.Drawing.Size(85, 66);
+            this.Btn1.TabIndex = 13;
+            this.Btn1.Text = "1";
+            this.Btn1.UseVisualStyleBackColor = true;
+            this.Btn1.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // BtnSubtract
+            // 
+            this.BtnSubtract.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnSubtract.Location = new System.Drawing.Point(283, 193);
+            this.BtnSubtract.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnSubtract.Name = "BtnSubtract";
+            this.BtnSubtract.Size = new System.Drawing.Size(86, 66);
+            this.BtnSubtract.TabIndex = 11;
+            this.BtnSubtract.Text = "\t-";
+            this.BtnSubtract.UseVisualStyleBackColor = true;
+            this.BtnSubtract.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // Btn6
+            // 
+            this.Btn6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn6.Location = new System.Drawing.Point(190, 193);
+            this.Btn6.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn6.Name = "Btn6";
+            this.Btn6.Size = new System.Drawing.Size(85, 66);
+            this.Btn6.TabIndex = 10;
+            this.Btn6.Text = "6";
+            this.Btn6.UseVisualStyleBackColor = true;
+            this.Btn6.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // Btn5
+            // 
+            this.Btn5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn5.Location = new System.Drawing.Point(97, 193);
+            this.Btn5.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn5.Name = "Btn5";
+            this.Btn5.Size = new System.Drawing.Size(85, 66);
+            this.Btn5.TabIndex = 9;
+            this.Btn5.Text = "5";
+            this.Btn5.UseVisualStyleBackColor = true;
+            this.Btn5.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // Btn4
+            // 
+            this.Btn4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn4.Location = new System.Drawing.Point(4, 193);
+            this.Btn4.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn4.Name = "Btn4";
+            this.Btn4.Size = new System.Drawing.Size(85, 66);
+            this.Btn4.TabIndex = 8;
+            this.Btn4.Text = "4";
+            this.Btn4.UseVisualStyleBackColor = true;
+            this.Btn4.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // BtnMultiply
+            // 
+            this.BtnMultiply.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnMultiply.Location = new System.Drawing.Point(283, 119);
+            this.BtnMultiply.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnMultiply.Name = "BtnMultiply";
+            this.BtnMultiply.Size = new System.Drawing.Size(86, 66);
+            this.BtnMultiply.TabIndex = 7;
+            this.BtnMultiply.Text = "×";
+            this.BtnMultiply.UseVisualStyleBackColor = true;
+            this.BtnMultiply.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // Btn9
+            // 
+            this.Btn9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn9.Location = new System.Drawing.Point(190, 119);
+            this.Btn9.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn9.Name = "Btn9";
+            this.Btn9.Size = new System.Drawing.Size(85, 66);
+            this.Btn9.TabIndex = 6;
+            this.Btn9.Text = "9";
+            this.Btn9.UseVisualStyleBackColor = true;
+            this.Btn9.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // Btn8
+            // 
+            this.Btn8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn8.Location = new System.Drawing.Point(97, 119);
+            this.Btn8.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn8.Name = "Btn8";
+            this.Btn8.Size = new System.Drawing.Size(85, 66);
+            this.Btn8.TabIndex = 5;
+            this.Btn8.Text = "8";
+            this.Btn8.UseVisualStyleBackColor = true;
+            this.Btn8.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // Btn7
+            // 
+            this.Btn7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn7.Location = new System.Drawing.Point(4, 119);
+            this.Btn7.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn7.Name = "Btn7";
+            this.Btn7.Size = new System.Drawing.Size(85, 66);
+            this.Btn7.TabIndex = 4;
+            this.Btn7.Text = "7";
+            this.Btn7.UseVisualStyleBackColor = true;
+            this.Btn7.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // BtnDivide
+            // 
+            this.BtnDivide.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnDivide.Location = new System.Drawing.Point(283, 45);
+            this.BtnDivide.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnDivide.Name = "BtnDivide";
+            this.BtnDivide.Size = new System.Drawing.Size(86, 66);
+            this.BtnDivide.TabIndex = 3;
+            this.BtnDivide.Text = "÷";
+            this.BtnDivide.UseVisualStyleBackColor = true;
+            this.BtnDivide.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // BtnClear
+            // 
+            this.BtnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BtnClear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnClear.Location = new System.Drawing.Point(4, 45);
+            this.BtnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnClear.Name = "BtnClear";
+            this.BtnClear.Size = new System.Drawing.Size(85, 66);
+            this.BtnClear.TabIndex = 2;
+            this.BtnClear.Text = "C";
+            this.BtnClear.UseVisualStyleBackColor = true;
+            this.BtnClear.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // BtnMemSub
+            // 
+            this.BtnMemSub.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnMemSub.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BtnMemSub.Location = new System.Drawing.Point(283, 4);
+            this.BtnMemSub.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnMemSub.Name = "BtnMemSub";
+            this.BtnMemSub.Size = new System.Drawing.Size(86, 33);
+            this.BtnMemSub.TabIndex = 23;
+            this.BtnMemSub.Text = "M-";
+            this.BtnMemSub.UseVisualStyleBackColor = true;
+            this.BtnMemSub.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // BtnMemAdd
+            // 
+            this.BtnMemAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnMemAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BtnMemAdd.Location = new System.Drawing.Point(190, 4);
+            this.BtnMemAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnMemAdd.Name = "BtnMemAdd";
+            this.BtnMemAdd.Size = new System.Drawing.Size(85, 33);
+            this.BtnMemAdd.TabIndex = 22;
+            this.BtnMemAdd.Text = "M+";
+            this.BtnMemAdd.UseVisualStyleBackColor = true;
+            this.BtnMemAdd.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // BtnMemGet
+            // 
+            this.BtnMemGet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnMemGet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BtnMemGet.Location = new System.Drawing.Point(97, 4);
+            this.BtnMemGet.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnMemGet.Name = "BtnMemGet";
+            this.BtnMemGet.Size = new System.Drawing.Size(85, 33);
+            this.BtnMemGet.TabIndex = 21;
+            this.BtnMemGet.Text = "MR";
+            this.BtnMemGet.UseVisualStyleBackColor = true;
+            this.BtnMemGet.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // BtnMemClear
+            // 
+            this.BtnMemClear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnMemClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BtnMemClear.Location = new System.Drawing.Point(4, 4);
+            this.BtnMemClear.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnMemClear.Name = "BtnMemClear";
+            this.BtnMemClear.Size = new System.Drawing.Size(85, 33);
+            this.BtnMemClear.TabIndex = 20;
+            this.BtnMemClear.Text = "MC";
+            this.BtnMemClear.UseVisualStyleBackColor = true;
+            this.BtnMemClear.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // BtnSquare
+            // 
+            this.BtnSquare.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnSquare.Location = new System.Drawing.Point(97, 45);
+            this.BtnSquare.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnSquare.Name = "BtnSquare";
+            this.BtnSquare.Size = new System.Drawing.Size(85, 66);
+            this.BtnSquare.TabIndex = 1;
+            this.BtnSquare.Text = "x^2";
+            this.BtnSquare.UseVisualStyleBackColor = true;
+            this.BtnSquare.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // BtnModulo
+            // 
+            this.BtnModulo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnModulo.Location = new System.Drawing.Point(190, 45);
+            this.BtnModulo.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnModulo.Name = "BtnModulo";
+            this.BtnModulo.Size = new System.Drawing.Size(85, 66);
+            this.BtnModulo.TabIndex = 18;
+            this.BtnModulo.Text = "%";
+            this.BtnModulo.UseVisualStyleBackColor = true;
+            this.BtnModulo.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // BtnDelete
+            // 
+            this.BtnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnDelete.Location = new System.Drawing.Point(190, 341);
+            this.BtnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(85, 71);
+            this.BtnDelete.TabIndex = 0;
+            this.BtnDelete.Text = "Del";
+            this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Click += new System.EventHandler(this.Btn_Click);
+            // 
+            // container
+            // 
+            this.container.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.container.Controls.Add(this.HistoryBox);
+            this.container.Controls.Add(this.tbl_buttons);
+            this.container.Controls.Add(this.DisplayBox);
+            this.container.Location = new System.Drawing.Point(16, 35);
+            this.container.Margin = new System.Windows.Forms.Padding(4);
+            this.container.Name = "container";
+            this.container.Size = new System.Drawing.Size(373, 495);
+            this.container.TabIndex = 4;
+            // 
             // DisplayBox
             // 
             this.DisplayBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -443,7 +458,7 @@
             this.DisplayBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.DisplayBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.DisplayBox.Location = new System.Drawing.Point(0, 39);
-            this.DisplayBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DisplayBox.Margin = new System.Windows.Forms.Padding(4);
             this.DisplayBox.MaxLength = 18;
             this.DisplayBox.Name = "DisplayBox";
             this.DisplayBox.ReadOnly = true;
@@ -452,38 +467,31 @@
             this.DisplayBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.DisplayBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             // 
-            // LblMemory
+            // BtnCalcI
             // 
-            this.LblMemory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblMemory.AutoSize = true;
-            this.LblMemory.Location = new System.Drawing.Point(16, 9);
-            this.LblMemory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LblMemory.MaximumSize = new System.Drawing.Size(373, 18);
-            this.LblMemory.MinimumSize = new System.Drawing.Size(373, 18);
-            this.LblMemory.Name = "LblMemory";
-            this.LblMemory.Size = new System.Drawing.Size(373, 18);
-            this.LblMemory.TabIndex = 3;
-            this.LblMemory.Text = "Memory: 0";
-            this.LblMemory.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LblMemory.Visible = false;
+            this.BtnCalcI.Location = new System.Drawing.Point(16, 8);
+            this.BtnCalcI.Name = "BtnCalcI";
+            this.BtnCalcI.Size = new System.Drawing.Size(36, 23);
+            this.BtnCalcI.TabIndex = 6;
+            this.BtnCalcI.Text = "Int";
+            this.BtnCalcI.UseVisualStyleBackColor = true;
+            this.BtnCalcI.Click += new System.EventHandler(this.BtnCalcI_Click);
             // 
-            // Calc
+            // CalcF
             // 
-            this.AcceptButton = this.BtnEquals;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.BtnClear;
             this.ClientSize = new System.Drawing.Size(405, 543);
+            this.Controls.Add(this.BtnCalcI);
             this.Controls.Add(this.LblMemory);
             this.Controls.Add(this.container);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximumSize = new System.Drawing.Size(687, 974);
             this.MinimumSize = new System.Drawing.Size(341, 531);
-            this.Name = "Calc";
+            this.Name = "CalcF";
             this.Text = "Calc";
+            this.tbl_buttons.ResumeLayout(false);
             this.container.ResumeLayout(false);
             this.container.PerformLayout();
-            this.tbl_buttons.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -491,8 +499,10 @@
 
         #endregion
 
+        private System.Windows.Forms.Label LblMemory;
+        private System.Windows.Forms.TextBox HistoryBox;
+        private System.Windows.Forms.TableLayoutPanel tbl_buttons;
         private System.Windows.Forms.Button BtnEquals;
-        private System.Windows.Forms.Button BtnModulo;
         private System.Windows.Forms.Button Btn0;
         private System.Windows.Forms.Button BtnPlusMinus;
         private System.Windows.Forms.Button BtnAdd;
@@ -508,18 +518,16 @@
         private System.Windows.Forms.Button Btn8;
         private System.Windows.Forms.Button Btn7;
         private System.Windows.Forms.Button BtnDivide;
-        private System.Windows.Forms.Button BtnSquare;
-        private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.Button BtnMemSub;
         private System.Windows.Forms.Button BtnMemAdd;
         private System.Windows.Forms.Button BtnMemGet;
         private System.Windows.Forms.Button BtnMemClear;
+        private System.Windows.Forms.Button BtnSquare;
+        private System.Windows.Forms.Button BtnModulo;
+        private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.Panel container;
-        private System.Windows.Forms.TableLayoutPanel tbl_buttons;
         private System.Windows.Forms.TextBox DisplayBox;
-        private System.Windows.Forms.TextBox HistoryBox;
-        private System.Windows.Forms.Label LblMemory;
+        private System.Windows.Forms.Button BtnCalcI;
     }
 }
-

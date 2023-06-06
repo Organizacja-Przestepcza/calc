@@ -1,17 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace calc
 {
-    public partial class Calc : Form
+    public partial class CalcF : Form
     {
-
-        public Calc()
+        public CalcF()
         {
             InitializeComponent();
         }
-
-        private long number1, number2, memory;
+        private double number1, number2, memory;
         private string operation;
         /// <summary>
         /// Handles key presses
@@ -39,8 +44,21 @@ namespace calc
                 case '/': BtnDivide.PerformClick(); break;
                 case '%': BtnModulo.PerformClick(); break;
                 case '=': BtnEquals.PerformClick(); break;
+                case '.': AddDot(); break;
+                case ',': AddDot(); break;
                 case (char)8: BtnDelete.PerformClick(); break;
 
+            }
+        }
+
+        /// <summary>
+        /// Adds a comma to DisplayBox (because regionalization) if there isn't any
+        /// </summary>
+        private void AddDot()
+        {
+            if(!DisplayBox.Text.Contains(","))
+            {
+                DisplayBox.Text += ",";
             }
         }
 
@@ -74,12 +92,12 @@ namespace calc
         /// Parses DisplayBox or HistoryBox and shows memory label
         /// </summary>
         /// <returns>Parsed value</returns>
-        private long MemOperation()
+        private double MemOperation()
         {
             // if it cant parse displaybox it tries to parse historybox
-            if (!long.TryParse(DisplayBox.Text, out long tmp))
+            if (!double.TryParse(DisplayBox.Text, out double tmp))
             {
-                long.TryParse(HistoryBox.Text, out tmp);
+                double.TryParse(HistoryBox.Text, out tmp);
             }
             LblMemory.Visible = true;
             return tmp;
@@ -91,11 +109,11 @@ namespace calc
         /// <param name="n">String to be added to DisplayBox</param>
         private void NumberWrite(string n)
         {
-            if(DisplayBox.Text.Length >= 18)
+            /*if (DisplayBox.Text.Length >= 18)
             {
                 MessageBox.Show("Max 18 numbers");
                 return;
-            }
+            }*/
             DisplayBox.Text += n;
         }
 
@@ -105,7 +123,7 @@ namespace calc
         private void PlusMinus_Method()
         {
             string numS;
-            long.TryParse(DisplayBox.Text, out long num);
+            double.TryParse(DisplayBox.Text, out double num);
             num = -num;
             numS = num.ToString();
             if (!numS.Equals("0"))
@@ -170,7 +188,7 @@ namespace calc
 
         private string Calculate()
         {
-            long result;
+            double result;
             if (number2 == 0)
             {
                 InputParse(true);
@@ -199,17 +217,17 @@ namespace calc
                         result = number1;
                     }
                     break;
-                case "=": result = number1;  break;
+                case "=": result = number1; break;
                 default: result = number2; break;
 
             }
             try
             {
-                long test = checked(result * 2);
+                double test = checked(result * 2);
             }
             catch (OverflowException)
             { MessageBox.Show("Result is too large or too small", "Overflow"); ClearDisplay(); return "Error"; }
-            number1 = result; 
+            number1 = result;
             operation = "=";
             number2 = 0;
             DisplayBox.Text = string.Empty;
@@ -218,22 +236,21 @@ namespace calc
         }
 
         /// <summary>
-        /// Parses text from DisplayBox into a <see cref="long"/> number1 or number2 depending on <paramref name="b"/>.
+        /// Parses text from DisplayBox into a <see cref="double"/> number1 or number2 depending on <paramref name="b"/>.
         /// </summary>
         /// <param name="b">If set to <see langword="true"/> outputs to number2, otherwise to number1</param>
         private void InputParse(bool b = false)
         {
             if (b)
-                long.TryParse(DisplayBox.Text, out number2);
+                double.TryParse(DisplayBox.Text, out number2);
             else
-                long.TryParse(DisplayBox.Text, out number1);
+                double.TryParse(DisplayBox.Text, out number1);
         }
 
-        private void BtnCalcF_Click(object sender, EventArgs e)
+        private void BtnCalcI_Click(object sender, EventArgs e)
         {
-            CalcF tmp = new CalcF();
+            Calc tmp = new Calc();
             tmp.ShowDialog();
-            this.Close();
         }
 
         /// <summary>
